@@ -1,0 +1,6 @@
+**/bin
+**/obj
+**/.vs
+**/.git
+**/wwwroot/generated/*.png
+**/appsettings.Development.json
