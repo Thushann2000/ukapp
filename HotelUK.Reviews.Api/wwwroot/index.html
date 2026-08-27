@@ -3,20 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Share your stay at Hotel UK Passikudah</title>
-<meta name="description" content="Tell us how your stay at Hotel UK Passikudah, Pasikuda Bay, was. It takes about a minute.">
+
+<!-- ============================================================
+     SEARCH
+     Title stays under 60 characters and leads with the brand,
+     because almost every search that reaches this page will be
+     somebody typing the hotel's own name.
+     ============================================================ -->
+<title>Hotel UK Passikudah Reviews | Pasikuda Bay, Sri Lanka</title>
+<meta name="description" content="Share your stay at Hotel UK Passikudah, Pasikuda Beach, Kalkudah, Sri Lanka. Leave a guest review in about a minute and choose where it is published.">
+
+<link rel="canonical" href="https://hoteluk.kernelarmor.me/">
+<link rel="alternate" hreflang="en" href="https://hoteluk.kernelarmor.me/">
+<link rel="alternate" hreflang="x-default" href="https://hoteluk.kernelarmor.me/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="author" content="Hotel UK Passikudah">
 <meta name="theme-color" content="#EAEFF0">
 <meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
 
+<!-- local signals, read by several travel directories -->
+<meta name="geo.region" content="LK-5">
+<meta name="geo.placename" content="Pasikuda Beach, Kalkudah, Eastern Province, Sri Lanka">
+<meta name="geo.position" content="7.9333;81.5667">
+<meta name="ICBM" content="7.9333, 81.5667">
+
+<!-- ============================================================
+     SHARING
+     og:url and canonical must agree, or Google treats the page
+     as two pages and splits its own ranking between them.
+     ============================================================ -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Hotel UK Passikudah">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="How was your stay at Hotel UK Passikudah?">
-<meta property="og:description" content="A few honest lines from you help other travellers find the quiet end of the bay.">
-<meta property="og:image" content="img/bay.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:description" content="A few honest lines from you help other travellers find the quiet end of Pasikuda Bay.">
+<meta property="og:url" content="https://hoteluk.kernelarmor.me/">
+<meta property="og:image" content="https://hoteluk.kernelarmor.me/img/bay.jpg">
+<meta property="og:image:secure_url" content="https://hoteluk.kernelarmor.me/img/bay.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="The bay at Hotel UK Passikudah, Pasikuda Beach, Sri Lanka">
 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How was your stay at Hotel UK Passikudah?">
+<meta name="twitter:description" content="A few honest lines from you help other travellers find the quiet end of Pasikuda Bay.">
+<meta name="twitter:image" content="https://hoteluk.kernelarmor.me/img/bay.jpg">
+<meta name="twitter:image:alt" content="The bay at Hotel UK Passikudah, Pasikuda Beach, Sri Lanka">
+
+<!-- ============================================================
+     SPEED. Core Web Vitals are a ranking signal, and the backdrop
+     photograph is the largest thing on the page, so it is asked
+     for before the browser has finished reading the stylesheet.
+     ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="preload" as="image" href="img/bay-mobile.jpg" media="(max-width:640px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/bay.jpg" media="(min-width:641px)" fetchpriority="high">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23052027'/%3E%3Cpath d='M20 38a12 12 0 0 1 24 0z' fill='%23E9B45B'/%3E%3Cpath d='M15 39h34M22 46h20' stroke='%2348D6C8' stroke-width='3' stroke-linecap='round'/%3E%3Ctext x='32' y='27' font-family='Georgia,serif' font-size='17' fill='%23F4E7D0' text-anchor='middle'%3EUK%3C/text%3E%3C/svg%3E">
 
@@ -27,9 +76,11 @@
    Hotel UK Passikudah, guest review page.
    One file, no build step, no dependencies.
 
-   The page is light and plain, the way a hotel's own paper is.
-   The one dark object on it is the review card, because that is
-   the only thing the guest has to do.
+   THE LOOK: the hotel's own stationery. A pale sea-haze page,
+   hairline rules, engraved gold keylines, and one dark card that
+   reads like a printed reply slip laid on the paper. Everything
+   is quiet except the card, because the card is the only thing
+   the guest has to do.
    ============================================================ */
 
 :root{
@@ -37,38 +88,48 @@
   --paper:#EAEFF0;
   --paper-2:#F7F9F9;
   --white:#FFFFFF;
-  --rule:#CBD8DA;
-  --rule-2:#B2C4C7;
+  --rule:#C6D5D8;
+  --rule-2:#A7BDC1;
 
-  --ink:#082129;
-  --ink-2:#3E5C64;
-  --ink-3:#6B888F;
+  --ink:#04191F;
+  --ink-2:#2F5761;
+  --ink-3:#5C7E87;
 
   /* the review card: the bay after sundown */
   --abyss:#052027;
   --shelf:#0C3038;
-  --deep-line:#1C4B57;
-  --deep-line-2:#2C6474;
+  --deep-line:#173F4A;
+  --deep-line-2:#2A5E6D;
   --sand:#F4E7D0;
-  --sand-2:#9BBAC1;
-  --sand-3:#6B939D;
+  --sand-2:#B0C8CE;
+  --sand-3:#7D9FA8;
 
-  --gold:#C08526;
+  --gold:#A5741F;
   --gold-lit:#E9B45B;
-  --gold-deep:#9C6A18;
+  --gold-soft:rgba(233,180,91,.20);
+  --gold-hair:rgba(233,180,91,.42);
+  --gold-deep:#8F6215;
   --lagoon:#0E7C86;
   --lagoon-lit:#48D6C8;
 
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 
   --ease:cubic-bezier(.22,.61,.36,1);
   --swell:cubic-bezier(.34,1.56,.64,1);
 
-  --gut:clamp(18px,5vw,44px);
-  --card:clamp(22px,4.5vw,40px);
-  --r:14px;
-  --r-lg:20px;
+  --gut:clamp(20px,5.5vw,56px);
+  --card:clamp(24px,5vw,46px);
+  --r:8px;
+  --r-lg:10px;
+  --r-sm:5px;
+
+  /* micro type, the engraved caption voice used all over the page */
+  --micro:.16em;
+
+  /* the hero sits straight on the photograph, so its type carries
+     its own light. Raise --veil below if a future picture fights it. */
+  --halo:0 1px 26px rgba(255,255,255,.92),0 1px 3px rgba(255,255,255,.75);
 }
 
 *,*::before,*::after{box-sizing:border-box;}
@@ -87,16 +148,16 @@ body{
   min-height:100svh;
   font-family:var(--sans);
   font-size:16px;
-  line-height:1.62;
+  line-height:1.65;
   color:var(--ink);
   background:transparent;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
+  font-feature-settings:"kern" 1;
 }
 
-/* --- modern scrollbar, light page --- */
-::-webkit-scrollbar{width:11px;height:11px;}
+::-webkit-scrollbar{width:10px;height:10px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{
   background:var(--rule-2);
@@ -107,18 +168,34 @@ body{
 
 img,svg,video{display:block;max-width:100%;}
 button,input,textarea,select{font:inherit;color:inherit;}
-::selection{background:rgba(192,133,38,.22);color:var(--ink);}
+::selection{background:rgba(165,116,31,.18);color:var(--ink);}
 
 :focus-visible{
-  outline:2px solid var(--lagoon);
+  outline:1.5px solid var(--gold);
   outline-offset:3px;
-  border-radius:6px;
+  border-radius:3px;
 }
 
 h1,h2,h3,blockquote,p{margin:0;}
 
+/* the engraved lozenge. A hairline rule with a small gold diamond
+   set into it, the mark used on a hotel's menu and reply cards.
+   This is the page's signature, so it appears twice and no more. */
+.assurances::before,
+.modal-sep::before{
+  content:"";
+  position:absolute;
+  top:-3.5px;
+  left:50%;
+  width:7px;
+  height:7px;
+  transform:translateX(-50%) rotate(45deg);
+  background:var(--gold-lit);
+  opacity:.85;
+}
+
 /* ============================================================
-   Reading progress, hairline across the top
+   Reading progress, one gold hair across the top
    ============================================================ */
 .progress{
   position:fixed;
@@ -127,7 +204,7 @@ h1,h2,h3,blockquote,p{margin:0;}
   width:100%;
   transform:scaleX(0);
   transform-origin:0 50%;
-  background:linear-gradient(90deg,var(--lagoon),var(--gold));
+  background:var(--gold-lit);
   z-index:60;
   pointer-events:none;
 }
@@ -143,29 +220,29 @@ h1,h2,h3,blockquote,p{margin:0;}
   align-items:center;
   justify-content:space-between;
   gap:14px;
-  padding:15px var(--gut);
-  padding-top:calc(15px + env(safe-area-inset-top));
+  padding:16px var(--gut);
+  padding-top:calc(16px + env(safe-area-inset-top));
   background:transparent;
   border-bottom:1px solid transparent;
-  transition:background .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);
+  transition:background .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);
 }
 .masthead.is-stuck{
-  background:rgba(234,239,240,.78);
-  -webkit-backdrop-filter:blur(16px) saturate(150%);
-  backdrop-filter:blur(16px) saturate(150%);
+  padding-top:calc(11px + env(safe-area-inset-top));
+  padding-bottom:11px;
+  background:rgba(238,242,243,.86);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  backdrop-filter:blur(20px) saturate(160%);
   border-bottom-color:var(--rule);
-  box-shadow:0 12px 30px -26px rgba(8,33,41,.6);
+  box-shadow:0 14px 34px -30px rgba(4,25,31,.7);
 }
 /* while it is clear, the wordmark needs its own legibility */
 .masthead:not(.is-stuck) .mark-name,
-.masthead:not(.is-stuck) .masthead-where{
-  text-shadow:0 1px 18px rgba(255,255,255,.85),0 1px 3px rgba(255,255,255,.7);
-}
+.masthead:not(.is-stuck) .masthead-where{text-shadow:var(--halo);}
 
 .mark{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:13px;
   text-decoration:none;
   color:var(--ink);
   min-width:0;
@@ -173,15 +250,18 @@ h1,h2,h3,blockquote,p{margin:0;}
 .mark svg{width:34px;height:34px;flex:none;}
 .mark-name{
   font-family:var(--serif);
-  font-size:clamp(18px,3.4vw,22px);
+  font-weight:500;
+  font-size:clamp(19px,3.4vw,24px);
   line-height:1.1;
+  letter-spacing:.005em;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
 }
 .masthead-where{
-  font-size:11.5px;
-  letter-spacing:.16em;
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.2em;
   text-transform:uppercase;
   color:var(--ink-3);
   white-space:nowrap;
@@ -189,17 +269,15 @@ h1,h2,h3,blockquote,p{margin:0;}
 
 /* ============================================================
    The page backdrop. One photograph, fixed behind everything.
-   No photograph and the layer removes itself, leaving plain paper,
-   which is a finished look rather than a gap.
+   UNCHANGED. No photograph and the layer removes itself, leaving
+   plain paper, which is a finished look rather than a gap.
 
    --veil washes paper over the picture. It is off. If a future
    photograph is busy enough to fight the type, raise it: .25 is a
    light haze, .5 is halfway, 1 hides the picture completely.
 
    --focus is where the crop is anchored. The title sits on the left,
-   so point this at the calm part of your photograph. In the current
-   picture the sky and water are on the left and the palms are on the
-   right, so phones pull left to keep the type off the leaves.
+   so point this at the calm part of your photograph.
    ============================================================ */
 :root{--veil:0;--focus:50% 45%;}
 
@@ -231,7 +309,7 @@ h1,h2,h3,blockquote,p{margin:0;}
    ============================================================ */
 .hero{
   position:relative;
-  padding:clamp(56px,11vh,124px) var(--gut) clamp(48px,8vh,88px);
+  padding:clamp(60px,12vh,136px) var(--gut) clamp(52px,9vh,96px);
 }
 .hero-copy{
   position:relative;
@@ -239,52 +317,52 @@ h1,h2,h3,blockquote,p{margin:0;}
   max-width:1240px;
   margin:0 auto;
 }
-/* The type sits straight on the photograph, so it carries its own
-   legibility as a soft halo rather than a panel behind it. */
-.hero-copy > *{
-  text-shadow:0 1px 26px rgba(255,255,255,.8),0 1px 4px rgba(255,255,255,.7);
-}
 
 .hero-eyebrow{
   display:inline-flex;
   align-items:center;
-  gap:12px;
-  font-size:11.5px;
-  letter-spacing:.22em;
+  gap:14px;
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.3em;
   text-transform:uppercase;
   color:var(--gold);
+  text-shadow:var(--halo);
 }
 .hero-eyebrow::after{
   content:"";
-  width:clamp(40px,9vw,90px);
+  width:clamp(44px,10vw,104px);
   height:1px;
   background:var(--gold);
-  opacity:.55;
+  opacity:.5;
 }
 .hero h1{
-  margin-top:clamp(16px,2.6vh,26px);
+  margin-top:clamp(18px,3vh,30px);
   font-family:var(--serif);
-  font-weight:400;
-  font-size:clamp(42px,9.6vw,96px);
-  line-height:.99;
-  letter-spacing:-.022em;
+  font-weight:500;
+  font-size:clamp(46px,10.4vw,108px);
+  line-height:.96;
+  letter-spacing:-.014em;
   text-wrap:balance;
-  max-width:16ch;
+  max-width:15ch;
+  text-shadow:var(--halo);
 }
-.hero h1 em{font-style:italic;color:var(--gold);}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--gold);}
 .hero-lede{
-  margin-top:clamp(18px,2.8vh,26px);
-  max-width:56ch;
-  font-size:clamp(16px,2.1vw,19px);
-  color:var(--ink-2);
+  margin-top:clamp(20px,3vh,28px);
+  max-width:54ch;
+  font-size:clamp(15.5px,2vw,18px);
+  font-weight:400;
+  line-height:1.68;
+  color:var(--ink);
+  text-shadow:var(--halo);
 }
-
 
 /* ============================================================
    Layout
    ============================================================ */
 .wrap{
-  padding:clamp(34px,7vh,76px) var(--gut) clamp(56px,9vh,104px);
+  padding:clamp(36px,7vh,80px) var(--gut) clamp(60px,10vh,112px);
   outline:none;
 }
 .panel{
@@ -292,108 +370,133 @@ h1,h2,h3,blockquote,p{margin:0;}
   width:100%;
   max-width:1240px;
   display:grid;
-  gap:clamp(24px,4vw,48px);
+  gap:clamp(26px,4vw,52px);
   grid-template-columns:1fr;
   align-items:start;
 }
 
 .reveal{
   opacity:0;
-  transform:translateY(18px);
-  transition:opacity .7s var(--ease),transform .7s var(--ease);
+  transform:translateY(16px);
+  transition:opacity .8s var(--ease),transform .8s var(--ease);
 }
 .reveal.is-in{opacity:1;transform:none;}
 html:not(.js) .reveal{opacity:1;transform:none;}
 
 /* ============================================================
-   The rail, on the paper
+   The rail, on the paper. Frosted, so the photograph shows
+   through without ever competing with the words.
    ============================================================ */
 .rail{
-  padding:clamp(24px,4vw,34px);
-  border:1px solid rgba(255,255,255,.65);
+  position:relative;
+  padding:clamp(28px,4.2vw,38px);
+  border:1px solid rgba(255,255,255,.85);
   border-radius:var(--r-lg);
-  background:rgba(247,249,249,.72);
-  -webkit-backdrop-filter:blur(14px) saturate(150%);
-  backdrop-filter:blur(14px) saturate(150%);
-  box-shadow:0 20px 50px -38px rgba(8,33,41,.6);
+  background:rgba(250,252,252,.84);
+  -webkit-backdrop-filter:blur(20px) saturate(160%);
+  backdrop-filter:blur(20px) saturate(160%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.9) inset,
+    0 26px 60px -46px rgba(4,25,31,.75);
 }
-.crest{margin-bottom:20px;}
-.crest svg{width:42px;height:42px;}
+/* a gold hair along the top edge, like the rule on a letterhead */
+.rail::before{
+  content:"";
+  position:absolute;
+  top:0;left:clamp(28px,4.2vw,38px);right:clamp(28px,4.2vw,38px);
+  height:2px;
+  background:var(--gold-lit);
+  opacity:.9;
+}
+.crest{margin-bottom:22px;}
+.crest svg{width:44px;height:44px;}
 
 .rail blockquote{
   font-family:var(--serif);
-  font-size:clamp(21px,3.4vw,28px);
-  line-height:1.26;
+  font-weight:400;
+  font-size:clamp(22px,3.6vw,30px);
+  line-height:1.3;
+  letter-spacing:.002em;
   color:var(--ink);
   text-wrap:pretty;
 }
 .rail-by{
-  margin-top:12px;
-  font-size:11.5px;
-  letter-spacing:.16em;
+  margin-top:14px;
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:var(--micro);
   text-transform:uppercase;
   color:var(--ink-3);
 }
 
 .assurances{
+  position:relative;
   list-style:none;
-  margin:26px 0 0;
-  padding:24px 0 0;
+  margin:30px 0 0;
+  padding:28px 0 0;
   border-top:1px solid var(--rule);
   display:grid;
-  gap:18px;
+  gap:20px;
 }
-.assurances li{display:flex;gap:13px;align-items:flex-start;}
+.assurances li{display:flex;gap:14px;align-items:flex-start;}
 .assurances svg{
-  width:17px;height:17px;flex:none;margin-top:4px;
-  stroke:var(--lagoon);fill:none;stroke-width:1.9;
+  width:16px;height:16px;flex:none;margin-top:5px;
+  stroke:var(--gold);fill:none;stroke-width:1.8;
   stroke-linecap:round;stroke-linejoin:round;
 }
 .assurances b{
   display:block;
   font-weight:600;
-  font-size:14.5px;
+  font-size:14px;
+  letter-spacing:.005em;
   color:var(--ink);
 }
-.assurances span{font-size:14px;color:var(--ink-2);line-height:1.5;}
+.assurances span{font-size:14px;color:var(--ink-2);line-height:1.55;}
 
 .rail-foot{
-  margin-top:24px;
-  padding-top:20px;
+  margin-top:28px;
+  padding-top:22px;
   border-top:1px solid var(--rule);
-  font-size:11.5px;
-  letter-spacing:.15em;
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:var(--micro);
   text-transform:uppercase;
   color:var(--ink-3);
 }
 
 /* ============================================================
-   THE REVIEW CARD. The one dark object on the page.
+   THE REVIEW CARD. The one dark object on the page, set with an
+   engraved keyline so it reads as a printed card, not a widget.
    ============================================================ */
 .form-side{
   position:relative;
   padding:var(--card);
   border-radius:var(--r-lg);
-  background:linear-gradient(172deg,var(--shelf),var(--abyss) 62%);
+  background:linear-gradient(168deg,var(--shelf),var(--abyss) 64%);
   color:var(--sand);
-  box-shadow:0 40px 80px -40px rgba(5,32,39,.85),0 2px 8px -2px rgba(5,32,39,.3);
+  box-shadow:
+    0 44px 88px -46px rgba(4,25,31,.9),
+    0 2px 10px -3px rgba(4,25,31,.35);
   overflow:hidden;
 }
-/* a lit edge along the top, so the card reads as an object with weight */
+/* the lit top edge, a single gold hair now, not a spectrum */
 .form-side::before{
   content:"";
   position:absolute;
   top:0;left:0;right:0;
   height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold-lit) 22%,var(--lagoon-lit) 78%,transparent);
-  opacity:.85;
+  background:var(--gold-lit);
+  opacity:.9;
+  z-index:2;
 }
+/* the engraved keyline, inset in the card's own margin */
 .form-side::after{
   content:"";
   position:absolute;
-  inset:0;
+  inset:clamp(10px,1.7vw,15px);
+  border:1px solid rgba(233,180,91,.15);
+  border-radius:var(--r-sm);
   pointer-events:none;
-  background:radial-gradient(75% 45% at 88% 4%, rgba(72,214,200,.13), transparent 62%);
 }
 .form-side > *{position:relative;z-index:1;}
 
@@ -401,103 +504,107 @@ html:not(.js) .reveal{opacity:1;transform:none;}
   display:flex;
   align-items:baseline;
   justify-content:space-between;
-  gap:16px;
+  gap:18px;
   flex-wrap:wrap;
   margin-bottom:clamp(20px,3.2vw,26px);
 }
 .card-title{
   font-family:var(--serif);
-  font-size:clamp(24px,4vw,31px);
-  line-height:1.15;
+  font-weight:500;
+  font-size:clamp(26px,4.4vw,36px);
+  line-height:1.12;
+  letter-spacing:.004em;
   color:var(--sand);
 }
 .card-step{
-  font-size:11px;
-  letter-spacing:.18em;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.2em;
   text-transform:uppercase;
   color:var(--sand-3);
   font-variant-numeric:tabular-nums;
 }
 
 /* --- the tide: how far through the guest is --- */
-.tide{margin-bottom:clamp(22px,3.5vw,30px);}
+.tide{margin-bottom:clamp(24px,3.6vw,32px);}
 .tide-track{
   position:relative;
-  height:3px;
+  height:2px;
   border-radius:99px;
-  background:rgba(28,75,87,.9);
+  background:rgba(23,63,74,.95);
   overflow:hidden;
 }
 .tide-fill{
   height:100%;
   width:var(--tide,0%);
   border-radius:99px;
-  background:linear-gradient(90deg,var(--lagoon-lit),var(--gold-lit));
-  box-shadow:0 0 14px rgba(72,214,200,.5);
-  transition:width .6s var(--swell);
+  background:var(--gold-lit);
+  transition:width .7s var(--swell);
 }
 .tide-label{
   display:block;
-  margin-top:10px;
-  font-size:11px;
-  letter-spacing:.17em;
+  margin-top:11px;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.2em;
   text-transform:uppercase;
   color:var(--sand-3);
 }
 
-.error{margin-bottom:0;font-size:14.5px;color:#FFA893;}
+.error{margin-bottom:0;font-size:14px;color:#FFB6A2;}
 .error:not(:empty){
-  margin-bottom:20px;
-  padding:12px 15px;
-  border:1px solid rgba(255,168,147,.42);
-  border-radius:12px;
-  background:rgba(255,168,147,.1);
+  margin-bottom:22px;
+  padding:13px 16px;
+  border:1px solid rgba(255,182,162,.4);
+  border-left:2px solid #FFB6A2;
+  border-radius:var(--r-sm);
+  background:rgba(255,182,162,.08);
 }
 
-.grp{border:0;margin:0 0 clamp(22px,3.4vw,28px);padding:0;min-width:0;}
+.grp{border:0;margin:0 0 clamp(24px,3.6vw,30px);padding:0;min-width:0;}
 .grp.duo{display:grid;gap:16px;grid-template-columns:1fr;}
 
 .lab{
   display:block;
-  margin-bottom:9px;
-  font-size:11.5px;
+  margin-bottom:10px;
+  font-size:10.5px;
   font-weight:600;
-  letter-spacing:.15em;
+  letter-spacing:.19em;
   text-transform:uppercase;
   color:var(--sand-2);
 }
-.opt{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--sand-3);}
+.opt{font-weight:400;letter-spacing:.06em;text-transform:none;color:var(--sand-3);}
 
 .form-side input[type="text"],
 .form-side textarea{
   width:100%;
-  padding:14px 16px;
+  padding:15px 16px;
   border:1px solid var(--deep-line);
   border-radius:var(--r);
-  background:rgba(4,22,27,.62);
+  background:rgba(3,20,25,.55);
   color:var(--sand);
   font-size:16px;
-  line-height:1.55;
-  transition:border-color .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);
+  line-height:1.6;
+  transition:border-color .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease);
 }
 .form-side input[type="text"]::placeholder,
-.form-side textarea::placeholder{color:#4C737D;}
+.form-side textarea::placeholder{color:#4A6E78;}
 .form-side input[type="text"]:focus,
 .form-side textarea:focus{
   outline:none;
   border-color:var(--gold-lit);
-  background:rgba(4,22,27,.85);
-  box-shadow:0 0 0 3px rgba(233,180,91,.15);
+  background:rgba(3,20,25,.8);
+  box-shadow:0 0 0 3px rgba(233,180,91,.13);
 }
 .form-side textarea{
-  min-height:clamp(150px,22vh,204px);
+  min-height:clamp(160px,23vh,214px);
   resize:vertical;
   scrollbar-width:thin;
   scrollbar-color:var(--deep-line-2) transparent;
 }
 .form-side textarea::-webkit-scrollbar{width:9px;}
 .form-side textarea::-webkit-scrollbar-thumb{
-  background:#2C6474;
+  background:#2A5E6D;
   border-radius:99px;
   border:2px solid transparent;
   background-clip:padding-box;
@@ -505,55 +612,55 @@ html:not(.js) .reveal{opacity:1;transform:none;}
 .form-side textarea::-webkit-scrollbar-thumb:hover{background:var(--gold-lit);background-clip:padding-box;}
 
 .counter{
-  margin-top:8px;
+  margin-top:9px;
   text-align:right;
-  font-size:12px;
+  font-size:11.5px;
+  letter-spacing:.04em;
   font-variant-numeric:tabular-nums;
   color:var(--sand-3);
-  transition:color .25s var(--ease);
+  transition:color .3s var(--ease);
 }
 .counter.is-low{color:var(--gold-lit);}
 
 /* --- rating --- */
-.rating{display:flex;gap:clamp(6px,1.8vw,11px);max-width:440px;}
+.rating{display:flex;gap:clamp(7px,1.9vw,12px);max-width:460px;}
 .rating input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;}
 .rating label{
   flex:1 1 0;
   display:grid;
   place-items:center;
-  padding:clamp(9px,2vw,13px) 0;
+  padding:clamp(11px,2.2vw,15px) 0;
   border:1px solid var(--deep-line);
-  border-radius:13px;
-  background:rgba(4,22,27,.45);
+  border-radius:var(--r);
+  background:rgba(3,20,25,.4);
   cursor:pointer;
-  transition:border-color .25s var(--ease),background .25s var(--ease);
+  transition:border-color .3s var(--ease),background .3s var(--ease);
 }
 .rating svg{
-  width:clamp(25px,6.6vw,32px);
-  height:clamp(25px,6.6vw,32px);
-  fill:none;stroke:#3E6E79;stroke-width:1.5;stroke-linejoin:round;
-  transition:fill .3s var(--ease),stroke .3s var(--ease),transform .3s var(--swell);
+  width:clamp(24px,6.2vw,30px);
+  height:clamp(24px,6.2vw,30px);
+  fill:none;stroke:#3B6873;stroke-width:1.4;stroke-linejoin:round;
+  transition:fill .35s var(--ease),stroke .35s var(--ease),transform .35s var(--swell);
 }
-.rating label[data-lit]{border-color:rgba(233,180,91,.5);background:rgba(233,180,91,.09);}
-.rating label[data-lit] svg{
-  fill:var(--gold-lit);stroke:var(--gold-lit);
-  filter:drop-shadow(0 3px 10px rgba(233,180,91,.4));
-}
-.rating input:focus-visible + label{outline:2px solid var(--lagoon-lit);outline-offset:2px;}
+.rating label[data-lit]{border-color:var(--gold-hair);background:var(--gold-soft);}
+.rating label[data-lit] svg{fill:var(--gold-lit);stroke:var(--gold-lit);}
+.rating input:focus-visible + label{outline:1.5px solid var(--gold-lit);outline-offset:2px;}
 @media (hover:hover){
   .rating label:hover{border-color:var(--deep-line-2);}
-  .rating label:hover svg{transform:translateY(-4px) scale(1.06);}
+  .rating label:hover svg{transform:translateY(-3px) scale(1.05);}
 }
 .rating label[data-pop] svg{animation:pop .55s var(--swell);}
-@keyframes pop{0%{transform:scale(.7);}55%{transform:scale(1.22);}100%{transform:scale(1);}}
+@keyframes pop{0%{transform:scale(.72);}55%{transform:scale(1.2);}100%{transform:scale(1);}}
 
 .rating-caption{
-  margin-top:13px;
+  margin-top:15px;
   font-family:var(--serif);
-  font-size:clamp(18px,3.2vw,22px);
-  line-height:1.3;
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(19px,3.4vw,24px);
+  line-height:1.32;
   color:var(--gold-lit);
-  transition:opacity .18s var(--ease),transform .18s var(--ease);
+  transition:opacity .2s var(--ease),transform .2s var(--ease);
 }
 .rating-caption.is-swap{opacity:0;transform:translateY(5px);}
 
@@ -561,101 +668,104 @@ html:not(.js) .reveal{opacity:1;transform:none;}
   display:grid;
   grid-template-rows:0fr;
   margin-top:0;
-  transition:grid-template-rows .45s var(--ease),margin-top .45s var(--ease);
+  transition:grid-template-rows .5s var(--ease),margin-top .5s var(--ease);
 }
 .aside-note > div{overflow:hidden;}
 .aside-note p{
-  padding:15px 17px;
-  border:1px solid rgba(72,214,200,.32);
-  border-radius:13px;
-  background:rgba(72,214,200,.08);
-  font-size:14.5px;
-  line-height:1.58;
+  padding:16px 18px;
+  border:1px solid rgba(72,214,200,.26);
+  border-left:2px solid var(--lagoon-lit);
+  border-radius:var(--r-sm);
+  background:rgba(72,214,200,.06);
+  font-size:14px;
+  line-height:1.62;
   color:var(--sand-2);
 }
-form.is-private .aside-note{grid-template-rows:1fr;margin-top:18px;}
+form.is-private .aside-note{grid-template-rows:1fr;margin-top:20px;}
 
 /* --- prompts --- */
-.prompts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.prompts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
 .prompt{
-  padding:8px 15px;
+  padding:9px 16px;
   border:1px solid var(--deep-line);
   border-radius:99px;
   background:transparent;
   color:var(--sand-2);
-  font-size:13.5px;
+  font-size:13px;
+  letter-spacing:.02em;
   cursor:pointer;
-  transition:border-color .25s var(--ease),color .25s var(--ease),background .25s var(--ease);
+  transition:border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease);
 }
-.prompt:hover{border-color:var(--gold-lit);color:var(--sand);}
+.prompt:hover{border-color:var(--gold-hair);color:var(--sand);background:rgba(233,180,91,.07);}
 .prompt[data-used]{
-  border-color:rgba(72,214,200,.45);
-  background:rgba(72,214,200,.1);
+  border-color:rgba(72,214,200,.4);
+  background:rgba(72,214,200,.08);
   color:var(--lagoon-lit);
 }
 
 /* --- where it goes: the consent switch --- */
 .routing{
-  margin:0 0 clamp(22px,3.4vw,28px);
+  margin:0 0 clamp(24px,3.6vw,30px);
   border:1px solid var(--deep-line);
   border-radius:var(--r);
-  background:rgba(4,22,27,.45);
+  background:rgba(3,20,25,.4);
   overflow:hidden;
 }
 .consent{
   display:flex;
   align-items:flex-start;
-  gap:14px;
-  padding:17px 18px;
+  gap:15px;
+  padding:18px 19px;
   cursor:pointer;
 }
 .consent input{
   appearance:none;
   -webkit-appearance:none;
   flex:none;
-  width:22px;height:22px;
-  margin:1px 0 0;
+  width:21px;height:21px;
+  margin:2px 0 0;
   border:1.5px solid var(--deep-line-2);
-  border-radius:7px;
-  background:rgba(4,22,27,.7);
+  border-radius:var(--r-sm);
+  background:rgba(3,20,25,.7);
   cursor:pointer;
   display:grid;
   place-content:center;
-  transition:background .2s var(--ease),border-color .2s var(--ease);
+  transition:background .25s var(--ease),border-color .25s var(--ease);
 }
 .consent input::before{
   content:"";
   width:11px;height:11px;
   transform:scale(0);
   transform-origin:center;
-  transition:transform .2s var(--swell);
+  transition:transform .25s var(--swell);
   clip-path:polygon(14% 44%,0 59%,39% 100%,100% 22%,85% 7%,39% 70%);
   background:#06222A;
 }
 .consent input:checked{background:var(--gold-lit);border-color:var(--gold-lit);}
 .consent input:checked::before{transform:scale(1);}
-.consent-text{font-size:14.5px;line-height:1.5;color:var(--sand);}
+.consent-text{font-size:14px;line-height:1.58;color:var(--sand);}
 .consent-text small{
   display:block;
-  margin-top:4px;
-  font-size:13px;
+  margin-top:6px;
+  font-size:12.5px;
   color:var(--sand-3);
-  line-height:1.5;
+  line-height:1.58;
 }
 
 /* the line that spells out where this review will actually land */
 .routing-out{
   display:flex;
   align-items:center;
-  gap:10px;
-  padding:13px 18px;
+  gap:11px;
+  padding:14px 19px;
   border-top:1px solid var(--deep-line);
-  background:rgba(4,22,27,.45);
-  font-size:13.5px;
+  background:rgba(3,20,25,.45);
+  font-size:12.5px;
+  letter-spacing:.02em;
   color:var(--sand-2);
 }
 .routing-out svg{
-  width:15px;height:15px;flex:none;
+  width:14px;height:14px;flex:none;
   fill:none;stroke:currentColor;stroke-width:2;
   stroke-linecap:round;stroke-linejoin:round;
 }
@@ -664,38 +774,46 @@ form.is-private .aside-note{grid-template-rows:1fr;margin-top:18px;}
 
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 
-/* --- buttons --- */
+/* --- buttons: engraved plate, not a glossy pill --- */
 .btn{
   position:relative;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:11px;
   width:100%;
-  padding:16px 26px;
+  padding:18px 26px;
   border:0;
   border-radius:var(--r);
-  background:linear-gradient(180deg,var(--gold-lit),var(--gold-deep));
-  color:#0B2028;
-  font-size:16px;
-  font-weight:650;
+  background:linear-gradient(180deg,#EFC172,#D19B3D);
+  color:#08222A;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
   text-decoration:none;
   cursor:pointer;
-  box-shadow:0 14px 30px -16px rgba(233,180,91,.8);
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease),filter .25s var(--ease);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.4) inset,
+    0 12px 26px -18px rgba(4,25,31,.9);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s var(--ease),background .3s var(--ease);
 }
-.btn:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px rgba(233,180,91,.9);}
+.btn:hover{
+  transform:translateY(-2px);
+  background:linear-gradient(180deg,#F4CB83,#D9A648);
+  box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 18px 34px -18px rgba(4,25,31,.9);
+}
 .btn:active{transform:translateY(0);}
-.btn svg{width:18px;height:18px;flex:none;}
-.btn[aria-busy="true"]{filter:saturate(.6);pointer-events:none;}
+.btn svg{width:16px;height:16px;flex:none;}
+.btn[aria-busy="true"]{filter:saturate(.55);pointer-events:none;}
 .btn[aria-busy="true"] .btn-icon{display:none;}
 
 .spinner{display:none;}
 .btn[aria-busy="true"] .spinner{
   display:block;
-  width:17px;height:17px;
-  border:2px solid rgba(11,32,40,.3);
-  border-top-color:#0B2028;
+  width:16px;height:16px;
+  border:2px solid rgba(8,34,42,.28);
+  border-top-color:#08222A;
   border-radius:50%;
   animation:spin .7s linear infinite;
 }
@@ -706,16 +824,21 @@ form.is-private .aside-note{grid-template-rows:1fr;margin-top:18px;}
   color:var(--sand);
   border:1px solid var(--deep-line-2);
   box-shadow:none;
-  font-weight:500;
+  font-weight:600;
+  letter-spacing:.15em;
 }
-.btn-quiet:hover{background:rgba(20,65,80,.55);border-color:var(--gold-lit);box-shadow:none;}
+.btn-quiet:hover{
+  background:rgba(233,180,91,.08);
+  border-color:var(--gold-hair);
+  box-shadow:none;
+}
 
-.submit-row{margin-top:clamp(24px,4vw,30px);}
+.submit-row{margin-top:clamp(26px,4vw,32px);}
 .fineprint{
-  margin-top:14px;
+  margin-top:16px;
   text-align:center;
-  font-size:12.5px;
-  line-height:1.55;
+  font-size:12px;
+  line-height:1.6;
   color:var(--sand-3);
 }
 
@@ -724,80 +847,91 @@ form.is-private .aside-note{grid-template-rows:1fr;margin-top:18px;}
    ============================================================ */
 .page-foot{
   position:relative;
-  background:rgba(5,32,39,.93);
-  -webkit-backdrop-filter:blur(12px);
-  backdrop-filter:blur(12px);
+  background:rgba(5,32,39,.95);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
   color:var(--sand-2);
-  padding:clamp(44px,7vh,72px) var(--gut) calc(clamp(30px,5vh,44px) + env(safe-area-inset-bottom));
+  padding:clamp(48px,8vh,80px) var(--gut) calc(clamp(32px,5vh,46px) + env(safe-area-inset-bottom));
+}
+.page-foot::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:var(--gold-lit);
+  opacity:.5;
 }
 .foot-inner{
   max-width:1240px;
   margin:0 auto;
   display:grid;
-  gap:clamp(26px,4vw,44px);
+  gap:clamp(28px,4vw,48px);
   grid-template-columns:1fr;
 }
-.foot-brand{display:flex;align-items:center;gap:13px;}
-.foot-brand svg{width:38px;height:38px;flex:none;}
+.foot-brand{display:flex;align-items:center;gap:14px;}
+.foot-brand svg{width:40px;height:40px;flex:none;}
 .foot-name{
   font-family:var(--serif);
-  font-size:clamp(21px,3.6vw,26px);
+  font-weight:500;
+  font-size:clamp(22px,3.8vw,28px);
   color:var(--sand);
-  line-height:1.15;
+  line-height:1.14;
 }
-.foot-where{margin-top:12px;font-size:14px;line-height:1.65;color:var(--sand-2);}
+.foot-where{margin-top:14px;font-size:13.5px;line-height:1.75;color:var(--sand-2);}
 .foot-head{
-  font-size:11px;
-  letter-spacing:.17em;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  color:var(--sand-3);
-  margin-bottom:12px;
+  color:var(--gold-lit);
+  opacity:.85;
+  margin-bottom:14px;
 }
-.foot-links{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
+.foot-links{list-style:none;margin:0;padding:0;display:grid;gap:10px;}
 .foot-links a{
   color:var(--sand-2);
   text-decoration:none;
-  font-size:14.5px;
+  font-size:14px;
   border-bottom:1px solid transparent;
-  transition:color .25s var(--ease),border-color .25s var(--ease);
+  transition:color .3s var(--ease),border-color .3s var(--ease);
 }
-.foot-links a:hover{color:var(--gold-lit);border-bottom-color:var(--gold-lit);}
+.foot-links a:hover{color:var(--gold-lit);border-bottom-color:var(--gold-hair);}
 
 .foot-bar{
   max-width:1240px;
-  margin:clamp(32px,5vh,52px) auto 0;
-  padding-top:22px;
+  margin:clamp(36px,5.5vh,58px) auto 0;
+  padding-top:24px;
   border-top:1px solid var(--deep-line);
   display:flex;
   flex-wrap:wrap;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
+  gap:16px;
 }
-.copyright{font-size:12.5px;color:var(--sand-3);line-height:1.6;}
-.photo-credit{font-size:12px;color:var(--sand-3);margin-top:6px;}
+.copyright{font-size:11.5px;letter-spacing:.05em;color:var(--sand-3);line-height:1.65;}
+.photo-credit{font-size:11.5px;color:var(--sand-3);margin-top:7px;}
 .photo-credit a{color:var(--sand-2);}
 
 .credit{
   display:inline-flex;
   align-items:center;
-  gap:9px;
-  padding:9px 15px;
+  gap:10px;
+  padding:10px 17px;
   border:1px solid var(--deep-line);
   border-radius:99px;
   text-decoration:none;
-  transition:border-color .3s var(--ease),background .3s var(--ease);
+  transition:border-color .35s var(--ease),background .35s var(--ease);
 }
-.credit:hover{border-color:var(--gold-lit);background:rgba(20,65,80,.4);}
-.credit-label{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand-3);}
-.credit-name{font-family:var(--serif);font-size:15.5px;color:var(--sand);}
-.credit svg{width:11px;height:11px;stroke:var(--lagoon-lit);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
+.credit:hover{border-color:var(--gold-hair);background:rgba(233,180,91,.07);}
+.credit-label{font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sand-3);}
+.credit-name{font-family:var(--serif);font-weight:500;font-size:16.5px;color:var(--sand);}
+.credit svg{width:10px;height:10px;stroke:var(--gold-lit);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
 
 /* ============================================================
    Thank you dialog
    ============================================================ */
 dialog{
-  width:min(490px,calc(100vw - 28px));
+  width:min(500px,calc(100vw - 28px));
   margin:auto;
   padding:0;
   border:0;
@@ -806,25 +940,25 @@ dialog{
   overflow:visible;
 }
 dialog::backdrop{
-  background:rgba(3,17,21,.72);
-  -webkit-backdrop-filter:blur(7px);
-  backdrop-filter:blur(7px);
+  background:rgba(2,14,18,.78);
+  -webkit-backdrop-filter:blur(9px);
+  backdrop-filter:blur(9px);
 }
-dialog[open]{animation:lift .32s var(--ease);}
+dialog[open]{animation:lift .34s var(--ease);}
 @keyframes lift{from{opacity:0;transform:translateY(14px) scale(.985);}to{opacity:1;transform:none;}}
 
 .modal-inner{
   position:relative;
-  padding:clamp(28px,5vw,40px);
+  padding:clamp(30px,5.5vw,44px);
   border-radius:var(--r-lg);
-  background:linear-gradient(172deg,var(--shelf),var(--abyss) 66%);
-  box-shadow:0 50px 100px -34px rgba(0,0,0,.9);
+  background:linear-gradient(168deg,var(--shelf),var(--abyss) 66%);
+  box-shadow:0 54px 108px -36px rgba(0,0,0,.92);
   text-align:center;
   max-height:calc(100svh - 36px);
   overflow-y:auto;
   overscroll-behavior:contain;
   scrollbar-width:thin;
-  scrollbar-color:#2C6474 transparent;
+  scrollbar-color:#2A5E6D transparent;
 }
 .modal-inner::before{
   content:"";
@@ -832,92 +966,95 @@ dialog[open]{animation:lift .32s var(--ease);}
   top:0;left:0;right:0;
   height:2px;
   border-radius:var(--r-lg) var(--r-lg) 0 0;
-  background:linear-gradient(90deg,transparent,var(--gold-lit) 25%,var(--lagoon-lit) 75%,transparent);
+  background:var(--gold-lit);
+  opacity:.9;
 }
 .modal-inner::-webkit-scrollbar{width:9px;}
 .modal-inner::-webkit-scrollbar-thumb{
-  background:#2C6474;border-radius:99px;
+  background:#2A5E6D;border-radius:99px;
   border:2px solid transparent;background-clip:padding-box;
 }
 
 /* modern close: a quiet round target in the corner */
 .modal-close{
   position:absolute;
-  top:14px;right:14px;
+  top:15px;right:15px;
   width:38px;height:38px;
   display:grid;
   place-items:center;
   border:1px solid var(--deep-line);
   border-radius:50%;
-  background:rgba(4,22,27,.6);
-  color:var(--sand-2);
+  background:rgba(3,20,25,.6);
+  color:var(--sand-3);
   cursor:pointer;
-  transition:color .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease),transform .25s var(--ease);
+  z-index:2;
+  transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease),transform .3s var(--ease);
 }
 .modal-close:hover{
   color:var(--sand);
-  border-color:var(--gold-lit);
-  background:rgba(20,65,80,.7);
+  border-color:var(--gold-hair);
+  background:rgba(233,180,91,.1);
   transform:rotate(90deg);
 }
-.modal-close svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;}
+.modal-close svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;}
 
-.modal-crest{display:flex;justify-content:center;margin-bottom:18px;}
-.modal-crest svg{width:44px;height:44px;}
+.modal-crest{display:flex;justify-content:center;margin-bottom:20px;}
+.modal-crest svg{width:46px;height:46px;}
 #thanksTitle{
   font-family:var(--serif);
-  font-weight:400;
-  font-size:clamp(26px,5.5vw,34px);
-  line-height:1.2;
+  font-weight:500;
+  font-size:clamp(28px,5.8vw,38px);
+  line-height:1.18;
+  letter-spacing:.004em;
 }
-.modal-lede{margin-top:10px;font-size:15.5px;color:var(--sand-2);}
+.modal-lede{margin-top:12px;font-size:15px;line-height:1.65;color:var(--sand-2);}
 .copied{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  margin-top:20px;
-  padding:9px 16px;
-  border:1px solid rgba(72,214,200,.4);
+  gap:9px;
+  margin-top:22px;
+  padding:10px 17px;
+  border:1px solid rgba(72,214,200,.34);
   border-radius:99px;
-  background:rgba(72,214,200,.09);
-  font-size:13.5px;
+  background:rgba(72,214,200,.07);
+  font-size:12.5px;
+  letter-spacing:.03em;
   color:var(--lagoon-lit);
 }
 .copied svg{
-  width:16px;height:16px;flex:none;
+  width:15px;height:15px;flex:none;
   stroke:currentColor;fill:none;stroke-width:2.4;
   stroke-linecap:round;stroke-linejoin:round;
 }
 .modal-sep{
-  margin-top:26px;
-  padding-top:22px;
+  position:relative;
+  margin-top:30px;
+  padding-top:26px;
   border-top:1px solid var(--deep-line);
-  font-size:11px;
-  letter-spacing:.17em;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.22em;
   text-transform:uppercase;
   color:var(--sand-3);
 }
-.modal-actions{display:grid;gap:10px;margin-top:16px;}
+.modal-actions{display:grid;gap:11px;margin-top:20px;}
 
 /* ============================================================
    Breakpoints. Phone first, then tablet, laptop, desktop.
    ============================================================ */
 
 /* phones and small tablets: the crop pulls to the calm side of the
-   photograph, and the halo works harder, because there is no room to
-   put the title anywhere but straight over the picture */
+   photograph. UNCHANGED. */
 @media (max-width:767px){
   :root{--focus:22% 42%;}
-  .hero-copy > *{
-    text-shadow:0 1px 30px rgba(255,255,255,.95),0 1px 10px rgba(255,255,255,.85),0 1px 3px rgba(255,255,255,.8);
-  }
 }
 
 /* small phones: the hotel name matters more than the location line */
 @media (max-width:539px){
   .masthead-where{display:none;}
-  .mark-name{font-size:18px;}
-  .card-head{flex-direction:column;align-items:flex-start;gap:5px;}
+  .mark-name{font-size:19px;}
+  .card-head{flex-direction:column;align-items:flex-start;gap:6px;}
+  .btn{letter-spacing:.12em;padding:17px 20px;}
 }
 
 /* larger phones and small tablets */
@@ -928,7 +1065,7 @@ dialog[open]{animation:lift .32s var(--ease);}
 /* tablets */
 @media (min-width:768px){
   body{font-size:16.5px;}
-  .panel{max-width:700px;}
+  .panel{max-width:720px;}
   .modal-actions{grid-template-columns:1fr 1fr;}
   .modal-actions .btn:first-child{grid-column:1 / -1;}
   .foot-inner{grid-template-columns:1.6fr 1fr 1fr;}
@@ -938,25 +1075,25 @@ dialog[open]{animation:lift .32s var(--ease);}
 @media (min-width:1024px){
   .panel{
     max-width:1240px;
-    grid-template-columns:minmax(280px,0.8fr) minmax(0,1.2fr);
+    grid-template-columns:minmax(290px,0.82fr) minmax(0,1.18fr);
   }
-  .rail{position:sticky;top:98px;}
+  .rail{position:sticky;top:102px;}
 }
 
 /* wide desktops */
 @media (min-width:1500px){
-  .panel{gap:60px;}
+  .panel{gap:64px;}
 }
 
 /* short landscape phones */
 @media (max-height:520px) and (orientation:landscape){
-  .hero{padding-top:44px;padding-bottom:26px;}
+  .hero{padding-top:46px;padding-bottom:28px;}
 }
 
 /* coarse pointers get bigger tap targets */
 @media (pointer:coarse){
-  .prompt{padding:10px 17px;font-size:14px;}
-  .rating label{padding:12px 0;}
+  .prompt{padding:11px 18px;font-size:13.5px;}
+  .rating label{padding:13px 0;}
   .modal-close{width:42px;height:42px;}
 }
 
@@ -974,7 +1111,9 @@ dialog[open]{animation:lift .32s var(--ease);}
   .progress,.masthead,.page-bg,.modal-close{display:none;}
   body{background:#fff;color:#000;}
   .rail,.page-foot{background:#fff;backdrop-filter:none;}
+  .rail::before,.page-foot::before{display:none;}
   .form-side{background:#fff;color:#000;box-shadow:none;border:1px solid #999;}
+  .form-side::before,.form-side::after{display:none;}
 }
 </style>
 </head>
@@ -987,7 +1126,8 @@ dialog[open]{animation:lift .32s var(--ease);}
 <div class="page-bg" id="pageBg" aria-hidden="true">
   <picture>
     <source media="(max-width:640px)" srcset="img/bay-mobile.jpg">
-    <img class="hero-photo" id="heroPhoto" src="img/bay.jpg" alt=""
+    <img class="hero-photo" id="heroPhoto" src="img/bay.jpg"
+         alt="Hotel UK Passikudah on Pasikuda Beach, Kalkudah, Sri Lanka"
          width="1920" height="1080" fetchpriority="high" decoding="async">
   </picture>
   <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none">
@@ -1012,13 +1152,13 @@ dialog[open]{animation:lift .32s var(--ease);}
   <span class="masthead-where">Pasikuda Bay, Sri Lanka</span>
 </header>
 
-<header class="hero" id="top">
+<section class="hero" id="top" aria-labelledby="hero-heading">
   <div class="hero-copy">
     <p class="hero-eyebrow">Share your stay</p>
-    <h1>How was the <em>bay</em> this time?</h1>
+    <h1 id="hero-heading">How was the <em>bay</em> this time?</h1>
     <p class="hero-lede">A few honest lines from you help the next traveller find the quiet end of Pasikuda, and they tell us what to keep doing.</p>
   </div>
-</header>
+</section>
 
 <main class="wrap" id="share" tabindex="-1">
   <div class="panel">
@@ -1188,7 +1328,7 @@ dialog[open]{animation:lift .32s var(--ease);}
     </p>
 
     <a class="credit" href="https://www.thushannmassthamizhan.media/" target="_blank" rel="noopener">
-      <span class="credit-label">Built by</span>
+      <span class="credit-label">Web Page Built by</span>
       <span class="credit-name">Vasanthakumar Thushann</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
     </a>
@@ -1229,18 +1369,80 @@ dialog[open]{animation:lift .32s var(--ease);}
   </div>
 </dialog>
 
+<!-- ============================================================
+     STRUCTURED DATA
+     This is what tells Google that the site, the page and the
+     hotel are one business, and ties them to a real place on the
+     map. Three things are deliberately NOT here, because wrong
+     data hurts more than missing data:
+
+       1. "telephone"  add the real number, e.g. "+94 65 567 8900"
+       2. "sameAs"     add the real Facebook, Instagram, TripAdvisor
+                       and Booking.com addresses of THIS hotel
+       3. "aggregateRating"  never write your own star average by
+                       hand. Google treats invented ratings as spam
+                       and can penalise the whole site for it.
+     ============================================================ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Hotel",
-  "name": "Hotel UK Passikudah",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Pasikuda Beach",
-    "addressLocality": "Kalkudah",
-    "addressRegion": "Eastern Province",
-    "addressCountry": "LK"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://hoteluk.kernelarmor.me/#website",
+      "url": "https://hoteluk.kernelarmor.me/",
+      "name": "Hotel UK Passikudah",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://hoteluk.kernelarmor.me/#hotel" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hoteluk.kernelarmor.me/#webpage",
+      "url": "https://hoteluk.kernelarmor.me/",
+      "name": "Hotel UK Passikudah Reviews | Pasikuda Bay, Sri Lanka",
+      "description": "Share your stay at Hotel UK Passikudah, Pasikuda Beach, Kalkudah, Sri Lanka. Leave a guest review in about a minute and choose where it is published.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://hoteluk.kernelarmor.me/#website" },
+      "about": { "@id": "https://hoteluk.kernelarmor.me/#hotel" },
+      "primaryImageOfPage": { "@id": "https://hoteluk.kernelarmor.me/#primaryimage" }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://hoteluk.kernelarmor.me/#primaryimage",
+      "url": "https://hoteluk.kernelarmor.me/img/bay.jpg",
+      "contentUrl": "https://hoteluk.kernelarmor.me/img/bay.jpg",
+      "width": 1920,
+      "height": 1080,
+      "caption": "The bay at Hotel UK Passikudah, Pasikuda Beach, Sri Lanka"
+    },
+    {
+      "@type": ["Hotel", "LodgingBusiness"],
+      "@id": "https://hoteluk.kernelarmor.me/#hotel",
+      "name": "Hotel UK Passikudah",
+      "alternateName": ["Hotel UK Pasikuda", "UK Passikudah"],
+      "description": "Beachfront hotel at the quiet end of Pasikuda Bay, Kalkudah, on the east coast of Sri Lanka.",
+      "url": "https://hoteluk.kernelarmor.me/",
+      "image": { "@id": "https://hoteluk.kernelarmor.me/#primaryimage" },
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pasikuda Beach",
+        "addressLocality": "Kalkudah",
+        "addressRegion": "Eastern Province",
+        "addressCountry": "LK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 7.9333,
+        "longitude": 81.5667
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Hotel%20UK%20Passikudah&query_place_id=ChIJWWbUJwDZ-joRPETg9xd0TFo",
+      "containedInPlace": {
+        "@type": "Place",
+        "name": "Pasikuda Bay, Batticaloa District, Eastern Province, Sri Lanka"
+      }
+    }
+  ]
 }
 </script>
 
