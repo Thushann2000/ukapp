@@ -10,8 +10,8 @@
      because almost every search that reaches this page will be
      somebody typing the hotel's own name.
      ============================================================ -->
-<title>Hotel UK Passikudah Reviews | Pasikuda Bay, Sri Lanka</title>
-<meta name="description" content="Share your stay at Hotel UK Passikudah, Pasikuda Beach, Kalkudah, Sri Lanka. Leave a guest review in about a minute and choose where it is published.">
+<title>Hotel UK Pasikuda Guest Reviews | Pasikuda, Sri Lanka</title>
+<meta name="description" content="Leave a guest review for Hotel UK Pasikuda, Munai Murukan Kovil Road, Kalkudah, Pasikuda, Sri Lanka. It takes about a minute, and you choose where it is published.">
 
 <link rel="canonical" href="https://hoteluk.kernelarmor.me/">
 <link rel="alternate" hreflang="en" href="https://hoteluk.kernelarmor.me/">
@@ -20,16 +20,16 @@
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow">
-<meta name="author" content="Hotel UK Passikudah">
+<meta name="author" content="Hotel UK Pasikuda">
 <meta name="theme-color" content="#EAEFF0">
 <meta name="color-scheme" content="light">
 <meta name="format-detection" content="telephone=no">
 
 <!-- local signals, read by several travel directories -->
 <meta name="geo.region" content="LK-5">
-<meta name="geo.placename" content="Pasikuda Beach, Kalkudah, Eastern Province, Sri Lanka">
-<meta name="geo.position" content="7.9333;81.5667">
-<meta name="ICBM" content="7.9333, 81.5667">
+<meta name="geo.placename" content="Munai Murukan Kovil Road, Kalkudah, Eastern Province, Sri Lanka">
+<meta name="geo.position" content="7.9213735;81.5709091">
+<meta name="ICBM" content="7.9213735, 81.5709091">
 
 <!-- ============================================================
      SHARING
@@ -37,9 +37,9 @@
      as two pages and splits its own ranking between them.
      ============================================================ -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Hotel UK Passikudah">
+<meta property="og:site_name" content="Hotel UK Pasikuda">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="How was your stay at Hotel UK Passikudah?">
+<meta property="og:title" content="How was your stay at Hotel UK Pasikuda?">
 <meta property="og:description" content="A few honest lines from you help other travellers find the quiet end of Pasikuda Bay.">
 <meta property="og:url" content="https://hoteluk.kernelarmor.me/">
 <meta property="og:image" content="https://hoteluk.kernelarmor.me/img/bay.jpg">
@@ -47,13 +47,13 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
-<meta property="og:image:alt" content="The bay at Hotel UK Passikudah, Pasikuda Beach, Sri Lanka">
+<meta property="og:image:alt" content="The bay at Hotel UK Pasikuda, Kalkudah, Sri Lanka">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How was your stay at Hotel UK Passikudah?">
+<meta name="twitter:title" content="How was your stay at Hotel UK Pasikuda?">
 <meta name="twitter:description" content="A few honest lines from you help other travellers find the quiet end of Pasikuda Bay.">
 <meta name="twitter:image" content="https://hoteluk.kernelarmor.me/img/bay.jpg">
-<meta name="twitter:image:alt" content="The bay at Hotel UK Passikudah, Pasikuda Beach, Sri Lanka">
+<meta name="twitter:image:alt" content="The bay at Hotel UK Pasikuda, Kalkudah, Sri Lanka">
 
 <!-- ============================================================
      SPEED. Core Web Vitals are a ranking signal, and the backdrop
@@ -73,7 +73,7 @@
 
 <style>
 /* ============================================================
-   Hotel UK Passikudah, guest review page.
+   Hotel UK Pasikuda, guest review page.
    One file, no build step, no dependencies.
 
    THE LOOK: the hotel's own stationery. A pale sea-haze page,
@@ -127,16 +127,25 @@
   /* micro type, the engraved caption voice used all over the page */
   --micro:.16em;
 
-  /* the hero sits straight on the photograph, so its type carries
-     its own light. Raise --veil below if a future picture fights it. */
-  --halo:0 1px 26px rgba(255,255,255,.92),0 1px 3px rgba(255,255,255,.75);
+  /* ONE measure for the whole page. The hero, the panel and the footer
+     all use it, so they can never fall out of line with each other.
+     Change it here and every band moves together. */
+  --content:1240px;
+
+  /* how far a jump-link stops below the sticky masthead */
+  --stick:96px;
 }
 
 *,*::before,*::after{box-sizing:border-box;}
 
 html{
   scroll-behavior:smooth;
+  /* jump links (#share, #top) must not land under the sticky masthead */
+  scroll-padding-top:var(--stick);
   background:var(--paper);
+  /* clip, NOT hidden. overflow:hidden turns this into a scroll container,
+     which is what breaks position:sticky and stutters the scroll. */
+  overflow-x:clip;
   -webkit-text-size-adjust:100%;
   text-size-adjust:100%;
   scrollbar-width:thin;
@@ -151,7 +160,7 @@ body{
   line-height:1.65;
   color:var(--ink);
   background:transparent;
-  overflow-x:hidden;
+  overflow-x:clip;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   font-feature-settings:"kern" 1;
@@ -235,10 +244,6 @@ h1,h2,h3,blockquote,p{margin:0;}
   border-bottom-color:var(--rule);
   box-shadow:0 14px 34px -30px rgba(4,25,31,.7);
 }
-/* while it is clear, the wordmark needs its own legibility */
-.masthead:not(.is-stuck) .mark-name,
-.masthead:not(.is-stuck) .masthead-where{text-shadow:var(--halo);}
-
 .mark{
   display:flex;
   align-items:center;
@@ -283,10 +288,18 @@ h1,h2,h3,blockquote,p{margin:0;}
 
 .page-bg{
   position:fixed;
-  inset:0;
+  top:0;left:0;right:0;
+  width:100%;
+  height:100vh;
+  height:100lvh;          /* the tall viewport, so it does not jump when
+                             a phone's address bar slides away mid-scroll */
   z-index:-2;
   pointer-events:none;
   overflow:hidden;
+  /* its own compositing layer, so scrolling never repaints the photograph */
+  transform:translateZ(0);
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
 }
 .page-bg picture{position:absolute;inset:0;display:block;}
 .hero-photo,.hero-video{
@@ -314,7 +327,7 @@ h1,h2,h3,blockquote,p{margin:0;}
 .hero-copy{
   position:relative;
   z-index:1;
-  max-width:1240px;
+  max-width:var(--content);
   margin:0 auto;
 }
 
@@ -327,7 +340,6 @@ h1,h2,h3,blockquote,p{margin:0;}
   letter-spacing:.3em;
   text-transform:uppercase;
   color:var(--gold);
-  text-shadow:var(--halo);
 }
 .hero-eyebrow::after{
   content:"";
@@ -345,7 +357,6 @@ h1,h2,h3,blockquote,p{margin:0;}
   letter-spacing:-.014em;
   text-wrap:balance;
   max-width:15ch;
-  text-shadow:var(--halo);
 }
 .hero h1 em{font-style:italic;font-weight:400;color:var(--gold);}
 .hero-lede{
@@ -355,7 +366,6 @@ h1,h2,h3,blockquote,p{margin:0;}
   font-weight:400;
   line-height:1.68;
   color:var(--ink);
-  text-shadow:var(--halo);
 }
 
 /* ============================================================
@@ -368,7 +378,7 @@ h1,h2,h3,blockquote,p{margin:0;}
 .panel{
   margin:0 auto;
   width:100%;
-  max-width:1240px;
+  max-width:var(--content);
   display:grid;
   gap:clamp(26px,4vw,52px);
   grid-template-columns:1fr;
@@ -862,7 +872,7 @@ form.is-private .aside-note{grid-template-rows:1fr;margin-top:20px;}
   opacity:.5;
 }
 .foot-inner{
-  max-width:1240px;
+  max-width:var(--content);
   margin:0 auto;
   display:grid;
   gap:clamp(28px,4vw,48px);
@@ -898,7 +908,7 @@ form.is-private .aside-note{grid-template-rows:1fr;margin-top:20px;}
 .foot-links a:hover{color:var(--gold-lit);border-bottom-color:var(--gold-hair);}
 
 .foot-bar{
-  max-width:1240px;
+  max-width:var(--content);
   margin:clamp(36px,5.5vh,58px) auto 0;
   padding-top:24px;
   border-top:1px solid var(--deep-line);
@@ -1040,61 +1050,136 @@ dialog[open]{animation:lift .34s var(--ease);}
 .modal-actions{display:grid;gap:11px;margin-top:20px;}
 
 /* ============================================================
-   Breakpoints. Phone first, then tablet, laptop, desktop.
+   BREAKPOINTS. Phone first, then tablet, laptop, desktop.
+
+   The whole ladder rests on one rule: the hero, the panel and the
+   footer are all --content wide and all centred. Nothing else is
+   ever given its own max-width, so the left edge of the headline and
+   the left edge of the review card cannot drift apart.
    ============================================================ */
 
-/* phones and small tablets: the crop pulls to the calm side of the
-   photograph. UNCHANGED. */
-@media (max-width:767px){
-  :root{--focus:22% 42%;}
+/* ---- small phones ---------------------------------------- */
+@media (max-width:389px){
+  :root{--gut:18px;--card:22px;}
+  .mark svg{width:30px;height:30px;}
+  .mark-name{font-size:18px;}
+  .hero h1{font-size:38px;max-width:none;}
+  .hero-lede{font-size:15px;}
+  .rating{gap:5px;}
+  .rating label{border-radius:var(--r-sm);}
+  .btn{font-size:11px;letter-spacing:.1em;padding:16px 14px;gap:8px;}
+  .consent{padding:16px 15px;gap:12px;}
+  .routing-out{padding:13px 15px;}
 }
 
-/* small phones: the hotel name matters more than the location line */
+/* ---- phones ---------------------------------------------- */
 @media (max-width:539px){
   .masthead-where{display:none;}
   .mark-name{font-size:19px;}
   .card-head{flex-direction:column;align-items:flex-start;gap:6px;}
-  .btn{letter-spacing:.12em;padding:17px 20px;}
+  .btn{letter-spacing:.12em;padding:17px 18px;}
+  /* on a phone the headline and the card should not be a screen apart */
+  .hero{padding-top:clamp(40px,7vh,64px);padding-bottom:clamp(30px,5vh,44px);}
+  .wrap{padding-top:clamp(22px,4vh,34px);padding-bottom:clamp(44px,7vh,68px);}
+  .rail{padding:24px 22px;}
+  .rail::before{left:22px;right:22px;}
+  .modal-actions .btn{padding:16px 14px;}
 }
 
-/* larger phones and small tablets */
+/* ---- phones and small tablets: the crop pulls to the calm
+        side of the photograph. UNCHANGED. -------------------- */
+@media (max-width:767px){
+  :root{--focus:22% 42%;}
+}
+
+/* ---- larger phones: the two short fields sit side by side -- */
 @media (min-width:560px){
   .grp.duo{grid-template-columns:1fr 1fr;}
 }
 
-/* tablets */
+/* ---- tablets --------------------------------------------- */
 @media (min-width:768px){
   body{font-size:16.5px;}
-  .panel{max-width:720px;}
   .modal-actions{grid-template-columns:1fr 1fr;}
   .modal-actions .btn:first-child{grid-column:1 / -1;}
   .foot-inner{grid-template-columns:1.6fr 1fr 1fr;}
 }
 
-/* laptops and desktops: two columns, rail stays in view */
-@media (min-width:1024px){
-  .panel{
-    max-width:1240px;
-    grid-template-columns:minmax(290px,0.82fr) minmax(0,1.18fr);
-  }
-  .rail{position:sticky;top:102px;}
+/* ---- laptops and desktops: two columns --------------------
+   960 rather than 1024, so the wide single-column stretch that
+   used to sit between them never happens. ------------------- */
+@media (min-width:960px){
+  .panel{grid-template-columns:minmax(280px,0.82fr) minmax(0,1.18fr);}
 }
 
-/* wide desktops */
-@media (min-width:1500px){
+/* the rail only pins itself when there is honestly room for it.
+   On a short window a pinned rail taller than the screen is what
+   makes scrolling feel stuck. */
+@media (min-width:960px) and (min-height:720px){
+  .rail{position:sticky;top:calc(var(--stick) + 6px);}
+}
+
+/* ---- roomier laptops ------------------------------------- */
+@media (min-width:1280px){
+  .panel{gap:52px;}
+}
+
+/* ---- wide desktops --------------------------------------- */
+@media (min-width:1600px){
   .panel{gap:64px;}
 }
 
-/* short landscape phones */
-@media (max-height:520px) and (orientation:landscape){
-  .hero{padding-top:46px;padding-bottom:28px;}
+/* ---- very wide screens: let the measure grow a little, rather
+        than stranding the page in the middle of the glass ---- */
+@media (min-width:2200px){
+  :root{--content:1420px;--gut:72px;}
+  body{font-size:17.5px;}
 }
 
-/* coarse pointers get bigger tap targets */
+/* ---- phones held sideways -------------------------------- */
+@media (max-height:520px) and (orientation:landscape){
+  .hero{padding-top:36px;padding-bottom:24px;}
+  .hero h1{font-size:clamp(34px,7vw,54px);}
+  .wrap{padding-top:24px;}
+}
+
+/* ============================================================
+   SCROLL PERFORMANCE
+   A frosted-glass panel sitting over a fixed photograph has to be
+   re-blurred on every frame. On a desktop that is free; on a phone
+   it is the whole reason the page stutters. Below the laptop
+   breakpoint the frost is dropped and the same surfaces are painted
+   solid instead, which looks all but identical and scrolls clean.
+   ============================================================ */
+@media (max-width:1023px){
+  .masthead.is-stuck{
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+    background:rgba(238,242,243,.97);
+  }
+  .rail{
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+    background:rgba(249,251,251,.96);
+  }
+  .page-foot{
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+    background:#052027;
+  }
+  dialog::backdrop{
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+    background:rgba(2,14,18,.86);
+  }
+}
+
+/* ---- coarse pointers get bigger tap targets --------------- */
 @media (pointer:coarse){
   .prompt{padding:11px 18px;font-size:13.5px;}
   .rating label{padding:13px 0;}
-  .modal-close{width:42px;height:42px;}
+  .modal-close{width:44px;height:44px;}
+  .foot-links a{display:inline-block;padding:3px 0;}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -1104,6 +1189,7 @@ dialog[open]{animation:lift .34s var(--ease);}
     transition-duration:.001ms !important;
     scroll-behavior:auto !important;
   }
+  html{scroll-behavior:auto;}
   .reveal{opacity:1;transform:none;}
 }
 
@@ -1127,7 +1213,7 @@ dialog[open]{animation:lift .34s var(--ease);}
   <picture>
     <source media="(max-width:640px)" srcset="img/bay-mobile.jpg">
     <img class="hero-photo" id="heroPhoto" src="img/bay.jpg"
-         alt="Hotel UK Passikudah on Pasikuda Beach, Kalkudah, Sri Lanka"
+         alt="Hotel UK Pasikuda, Munai Murukan Kovil Road, Kalkudah, Sri Lanka"
          width="1920" height="1080" fetchpriority="high" decoding="async">
   </picture>
   <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none">
@@ -1147,7 +1233,7 @@ dialog[open]{animation:lift .34s var(--ease);}
       <path d="M15 39h34M22 46h20" stroke="#48D6C8" stroke-width="3" stroke-linecap="round" fill="none"/>
       <text x="32" y="27" font-family="Instrument Serif, Georgia, serif" font-size="17" fill="#F4E7D0" text-anchor="middle">UK</text>
     </svg>
-    <span class="mark-name">Hotel UK Passikudah</span>
+    <span class="mark-name">Hotel UK Pasikuda</span>
   </a>
   <span class="masthead-where">Pasikuda Bay, Sri Lanka</span>
 </header>
@@ -1191,7 +1277,7 @@ dialog[open]{animation:lift .34s var(--ease);}
         </li>
       </ul>
 
-      <p class="rail-foot">Pasikuda Beach, Kalkudah, Eastern Province</p>
+      <p class="rail-foot">Munai Murukan Kovil Road, Kalkudah</p>
     </aside>
 
     <section class="form-side reveal">
@@ -1257,7 +1343,7 @@ dialog[open]{animation:lift .34s var(--ease);}
           <label class="consent" for="consent">
             <input type="checkbox" id="consent">
             <span class="consent-text">
-              Post my name and review on the Hotel UK Passikudah Facebook and Instagram pages.
+              Post my name and review on the Hotel UK Pasikuda Facebook and Instagram pages.
               <small>Leave this clear and we post nothing. Your words go to your clipboard and the Google review box opens for you.</small>
             </span>
           </label>
@@ -1296,11 +1382,11 @@ dialog[open]{animation:lift .34s var(--ease);}
           <path d="M15 39h34M22 46h20" stroke="#48D6C8" stroke-width="3" stroke-linecap="round" fill="none"/>
           <text x="32" y="27" font-family="Instrument Serif, Georgia, serif" font-size="17" fill="#F4E7D0" text-anchor="middle">UK</text>
         </svg>
-        <span class="foot-name">Hotel UK Passikudah</span>
+        <span class="foot-name">Hotel UK Pasikuda</span>
       </div>
       <p class="foot-where">
-        Pasikuda Beach, Kalkudah<br>
-        Eastern Province, Sri Lanka
+        Munai Murukan Kovil Road, Kalkudah<br>
+        Eastern Province, Sri Lanka<br>
       </p>
       <p class="photo-credit" hidden>Photograph by <a href="#">Name</a></p>
     </div>
@@ -1324,7 +1410,7 @@ dialog[open]{animation:lift .34s var(--ease);}
 
   <div class="foot-bar">
     <p class="copyright">
-      &copy; <span id="year">2026</span> Hotel UK Passikudah. All rights reserved.
+      &copy; <span id="year">2026</span> Hotel UK Pasikuda. All rights reserved.
     </p>
 
     <a class="credit" href="https://www.thushannmassthamizhan.media/" target="_blank" rel="noopener">
@@ -1376,12 +1462,14 @@ dialog[open]{animation:lift .34s var(--ease);}
      map. Three things are deliberately NOT here, because wrong
      data hurts more than missing data:
 
-       1. "telephone"  add the real number, e.g. "+94 65 567 8900"
-       2. "sameAs"     add the real Facebook, Instagram, TripAdvisor
-                       and Booking.com addresses of THIS hotel
-       3. "aggregateRating"  never write your own star average by
-                       hand. Google treats invented ratings as spam
-                       and can penalise the whole site for it.
+       1. "sameAs"     Booking.com and TripAdvisor are in. Add the real
+                       Facebook and Instagram addresses of THIS hotel
+                       to the same list.
+       2. "aggregateRating"  never write your own star average by
+                       hand. Google treats a self-declared rating as
+                       spam and can penalise the whole site for it.
+                       The 4.4 on the Google listing belongs to Google
+                       and is shown by Google. Leave it there.
      ============================================================ -->
 <script type="application/ld+json">
 {
@@ -1391,7 +1479,7 @@ dialog[open]{animation:lift .34s var(--ease);}
       "@type": "WebSite",
       "@id": "https://hoteluk.kernelarmor.me/#website",
       "url": "https://hoteluk.kernelarmor.me/",
-      "name": "Hotel UK Passikudah",
+      "name": "Hotel UK Pasikuda",
       "inLanguage": "en",
       "publisher": { "@id": "https://hoteluk.kernelarmor.me/#hotel" }
     },
@@ -1399,8 +1487,8 @@ dialog[open]{animation:lift .34s var(--ease);}
       "@type": "WebPage",
       "@id": "https://hoteluk.kernelarmor.me/#webpage",
       "url": "https://hoteluk.kernelarmor.me/",
-      "name": "Hotel UK Passikudah Reviews | Pasikuda Bay, Sri Lanka",
-      "description": "Share your stay at Hotel UK Passikudah, Pasikuda Beach, Kalkudah, Sri Lanka. Leave a guest review in about a minute and choose where it is published.",
+      "name": "Hotel UK Pasikuda \u2014 Guest Reviews | Pasikuda, Sri Lanka",
+      "description": "Leave a guest review for Hotel UK Pasikuda, Munai Murukan Kovil Road, Kalkudah, Pasikuda, Sri Lanka.",
       "inLanguage": "en",
       "isPartOf": { "@id": "https://hoteluk.kernelarmor.me/#website" },
       "about": { "@id": "https://hoteluk.kernelarmor.me/#hotel" },
@@ -1413,34 +1501,45 @@ dialog[open]{animation:lift .34s var(--ease);}
       "contentUrl": "https://hoteluk.kernelarmor.me/img/bay.jpg",
       "width": 1920,
       "height": 1080,
-      "caption": "The bay at Hotel UK Passikudah, Pasikuda Beach, Sri Lanka"
+      "caption": "The bay at Hotel UK Pasikuda, Kalkudah, Sri Lanka"
     },
     {
       "@type": ["Hotel", "LodgingBusiness"],
       "@id": "https://hoteluk.kernelarmor.me/#hotel",
-      "name": "Hotel UK Passikudah",
-      "alternateName": ["Hotel UK Pasikuda", "UK Passikudah"],
-      "description": "Beachfront hotel at the quiet end of Pasikuda Bay, Kalkudah, on the east coast of Sri Lanka.",
+      "name": "Hotel UK Pasikuda",
+      "alternateName": [
+        "Hotel UK Passikudah",
+        "Hotel UK Pasikudah",
+        "Hotel UK Passekudah",
+        "Hotel UK Pasikudah Beach",
+        "UK Pasikuda",
+        "Hotel UK Kalkudah"
+      ],
+      "description": "Hotel UK Pasikuda is a small family-run hotel on Munai Murukan Kovil Road, Kalkudah, a short walk from Pasikuda Beach on the east coast of Sri Lanka.",
       "url": "https://hoteluk.kernelarmor.me/",
       "image": { "@id": "https://hoteluk.kernelarmor.me/#primaryimage" },
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Pasikuda Beach",
+        "streetAddress": "Munai Murukan Kovil Road",
         "addressLocality": "Kalkudah",
         "addressRegion": "Eastern Province",
         "addressCountry": "LK"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 7.9333,
-        "longitude": 81.5667
+        "latitude": 7.9213735,
+        "longitude": 81.5709091
       },
-      "hasMap": "https://www.google.com/maps/search/?api=1&query=Hotel%20UK%20Passikudah&query_place_id=ChIJWWbUJwDZ-joRPETg9xd0TFo",
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Hotel%20UK%20Pasikuda&query_place_id=ChIJWWbUJwDZ-joRPETg9xd0TFo",
       "containedInPlace": {
         "@type": "Place",
-        "name": "Pasikuda Bay, Batticaloa District, Eastern Province, Sri Lanka"
-      }
+        "name": "Kalkudah, Batticaloa District, Eastern Province, Sri Lanka"
+      },
+      "sameAs": [
+        "https://www.booking.com/hotel/lk/uk-pasikuda.html",
+        "https://www.tripadvisor.com/Hotel_Review-g2193270-d34326974-Reviews-Hotel_UK_Pasikuda-Kalkudah_Eastern_Province.html"
+      ]
     }
   ]
 }
@@ -1570,7 +1669,7 @@ document.getElementById("year").textContent = String(new Date().getFullYear());
     apiUrl: "/api/reviews",
 
     // Google: the Place ID on the end opens the review box for
-    // Hotel UK Passikudah directly.
+    // Hotel UK Pasikuda directly.
     googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJWWbUJwDZ-joRPETg9xd0TFo",
 
     // Booking.com: this is the hotel listing page, NOT a review form.
