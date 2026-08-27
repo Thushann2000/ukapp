@@ -20,6 +20,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap">
 
+<!-- Smooth/inertia scroll (desktop mouse only — phones and tablets keep
+     their own native momentum scroll, which is already smooth and never
+     laggy, so nothing extra runs on them). Loaded deferred so it never
+     blocks first paint or the page's own scripts. -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.14/lenis.min.js" defer></script>
+<script defer>
+(function () {
+  "use strict";
+  if (typeof Lenis === "undefined") { return; }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  if (window.matchMedia("(pointer: coarse)").matches) { return; }
+
+  var lenis = new Lenis({
+    duration: 1.05,
+    easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+    smoothWheel: true,
+    syncTouch: false
+  });
+  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+})();
+</script>
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2304212A'/%3E%3Cpath d='M20 38a12 12 0 0 1 24 0z' fill='%23E3A62F'/%3E%3Cpath d='M15 39h34M22 46h20' stroke='%233FBFBF' stroke-width='3' stroke-linecap='round'/%3E%3Ctext x='32' y='27' font-family='Georgia,serif' font-size='17' fill='%23FCF8F2' text-anchor='middle'%3EUK%3C/text%3E%3C/svg%3E">
 
 <script>document.documentElement.className = "js";</script>
@@ -899,7 +923,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
   <div class="hero-copy">
     <p class="hero-eyebrow">Share your stay</p>
     <h1>How was the <em>bay</em> this time?</h1>
-    <p class="hero-lede">A few honest lines from you help the next traveller find the quiet end of Pasikuda — and tell us what to keep doing.</p>
+    <p class="hero-lede">A few honest lines from you help the next traveller find the quiet end of Pasikuda and tell us what to keep doing.</p>
   </div>
 
   <a class="scroll-cue" href="#share">
