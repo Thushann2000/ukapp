@@ -1,0 +1,9 @@
+# Hotel UK Pasikuda — https://hoteluk.kernelarmor.me/
+
+User-agent: *
+Allow: /
+
+# the review endpoint is not a page, and should never be indexed
+Disallow: /api/
+
+Sitemap: https://hoteluk.kernelarmor.me/sitemap.xml
