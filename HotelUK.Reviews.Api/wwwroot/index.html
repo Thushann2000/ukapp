@@ -3,648 +3,668 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Share your stay · Hotel UK Passikudah</title>
+<title>Share your stay at Hotel UK Passikudah</title>
 <meta name="description" content="Tell us how your stay at Hotel UK Passikudah, Pasikuda Bay, was. It takes about a minute.">
-<meta name="theme-color" content="#04212A">
+<meta name="theme-color" content="#EAEFF0">
 <meta name="color-scheme" content="light">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="How was your stay? · Hotel UK Passikudah">
+<meta property="og:title" content="How was your stay at Hotel UK Passikudah?">
 <meta property="og:description" content="A few honest lines from you help other travellers find the quiet end of the bay.">
 <meta property="og:image" content="img/bay.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preload" as="image" href="img/bay.jpg" media="(min-width: 641px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/bay-mobile.jpg" media="(max-width: 640px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&display=swap">
 
-<!-- Smooth/inertia scroll (desktop mouse only — phones and tablets keep
-     their own native momentum scroll, which is already smooth and never
-     laggy, so nothing extra runs on them). Loaded deferred so it never
-     blocks first paint or the page's own scripts. -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.14/lenis.min.js" defer></script>
-<script defer>
-(function () {
-  "use strict";
-  if (typeof Lenis === "undefined") { return; }
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
-  if (window.matchMedia("(pointer: coarse)").matches) { return; }
-
-  var lenis = new Lenis({
-    duration: 1.05,
-    easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-    smoothWheel: true,
-    syncTouch: false
-  });
-  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-  requestAnimationFrame(raf);
-})();
-</script>
-
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2304212A'/%3E%3Cpath d='M20 38a12 12 0 0 1 24 0z' fill='%23E3A62F'/%3E%3Cpath d='M15 39h34M22 46h20' stroke='%233FBFBF' stroke-width='3' stroke-linecap='round'/%3E%3Ctext x='32' y='27' font-family='Georgia,serif' font-size='17' fill='%23FCF8F2' text-anchor='middle'%3EUK%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23052027'/%3E%3Cpath d='M20 38a12 12 0 0 1 24 0z' fill='%23E9B45B'/%3E%3Cpath d='M15 39h34M22 46h20' stroke='%2348D6C8' stroke-width='3' stroke-linecap='round'/%3E%3Ctext x='32' y='27' font-family='Georgia,serif' font-size='17' fill='%23F4E7D0' text-anchor='middle'%3EUK%3C/text%3E%3C/svg%3E">
 
 <script>document.documentElement.className = "js";</script>
 
 <style>
 /* ============================================================
-   Hotel UK Passikudah — guest review page
+   Hotel UK Passikudah, guest review page.
    One file, no build step, no dependencies.
 
-   To change the photograph, edit the <picture> block in the hero
-   (one place only — the blurred backdrop follows it automatically).
+   The page is light and plain, the way a hotel's own paper is.
+   The one dark object on it is the review card, because that is
+   the only thing the guest has to do.
    ============================================================ */
 
-@font-face{font-family:"Sans Fallback";src:local("Arial"),local("Helvetica Neue");ascent-override:96%;descent-override:24%;line-gap-override:0%;size-adjust:100%;}
-@font-face{font-family:"Serif Fallback";src:local("Times New Roman"),local("Georgia");ascent-override:90%;descent-override:22%;line-gap-override:0%;size-adjust:106%;}
-
-@property --sheen{syntax:"<length-percentage>";inherits:false;initial-value:-160%;}
-@property --tide{syntax:"<percentage>";inherits:false;initial-value:0%;}
-
 :root{
-  color-scheme:light;
-
-  /* the bay, top to bottom */
-  --ink:#04212A;
-  --ink-2:#08313D;
-  --lagoon:#0E6A78;
-  --shallow:#3FBFBF;
-  --foam:#CFEDE7;
-  --sand:#EFE4D2;
-  --paper:#FCF8F2;
+  /* the page: pale sea haze, the light off the bay at midday */
+  --paper:#EAEFF0;
+  --paper-2:#F7F9F9;
   --white:#FFFFFF;
-  --gold:#E3A62F;
+  --rule:#CBD8DA;
+  --rule-2:#B2C4C7;
 
-  --text:#0C2A32;
-  --text-2:#4E6E77;
-  --text-3:#84A0A7;
+  --ink:#082129;
+  --ink-2:#3E5C64;
+  --ink-3:#6B888F;
 
-  --line:color-mix(in oklab, var(--ink) 11%, transparent);
-  --line-2:color-mix(in oklab, var(--ink) 20%, transparent);
+  /* the review card: the bay after sundown */
+  --abyss:#052027;
+  --shelf:#0C3038;
+  --deep-line:#1C4B57;
+  --deep-line-2:#2C6474;
+  --sand:#F4E7D0;
+  --sand-2:#9BBAC1;
+  --sand-3:#6B939D;
 
-  --lift:0 1px 2px rgba(4,33,42,.05), 0 10px 26px -14px rgba(4,33,42,.30);
-  --panel-shadow:0 2px 5px rgba(4,33,42,.07), 0 44px 96px -44px rgba(4,33,42,.82), 0 14px 38px -24px rgba(4,33,42,.40);
+  --gold:#C08526;
+  --gold-lit:#E9B45B;
+  --gold-deep:#9C6A18;
+  --lagoon:#0E7C86;
+  --lagoon-lit:#48D6C8;
 
-  --ease:cubic-bezier(.22,1,.36,1);
-  --ease-io:cubic-bezier(.62,0,.28,1);
-  --swell:linear(0, .19 3.6%, .74 12.4%, 1.03 19%, 1.07 23%, 1.01 31%, .997 44%, 1);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 
-  --display:"Instrument Serif","Serif Fallback",Georgia,serif;
-  --ui:"Instrument Sans","Sans Fallback",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --swell:cubic-bezier(.34,1.56,.64,1);
 
-  --photo:none;
-  --shell:min(100%, 1140px);
+  --gut:clamp(18px,5vw,44px);
+  --card:clamp(22px,4.5vw,40px);
+  --r:14px;
+  --r-lg:20px;
 }
 
 *,*::before,*::after{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--paper);
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scrollbar-width:thin;
+  scrollbar-color:var(--rule-2) transparent;
+}
 
 body{
   margin:0;
-  min-height:100dvh;
-  background:var(--ink);
-  color:var(--text);
-  font-family:var(--ui);
-  font-size:16.5px;
+  min-height:100svh;
+  font-family:var(--sans);
+  font-size:16px;
   line-height:1.62;
-  font-synthesis-weight:none;
-  -webkit-font-smoothing:antialiased;
+  color:var(--ink);
+  background:transparent;
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-/* the same photograph, blurred right down, so the foot of the page
-   is never a flat block of colour */
-body::before{
-  content:"";
-  position:fixed;
-  inset:-8%;
-  z-index:-1;
-  background:var(--photo) center/cover no-repeat, linear-gradient(180deg,#0B4A57,#04212A);
-  filter:blur(58px) saturate(.8) brightness(.34);
+/* --- modern scrollbar, light page --- */
+::-webkit-scrollbar{width:11px;height:11px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{
+  background:var(--rule-2);
+  border-radius:99px;
+  border:3px solid var(--paper);
 }
-
-/* film grain, over everything but the dialog */
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:9;
-  pointer-events:none;
-  opacity:.045;
-  mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+::-webkit-scrollbar-thumb:hover{background:var(--gold);}
 
 img,svg,video{display:block;max-width:100%;}
-h1,h2,h3{margin:0;font-weight:400;text-wrap:balance;}
-p{margin:0;text-wrap:pretty;}
+button,input,textarea,select{font:inherit;color:inherit;}
+::selection{background:rgba(192,133,38,.22);color:var(--ink);}
 
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
-
-.skip{
-  position:fixed;top:10px;left:50%;z-index:60;
-  transform:translate(-50%,-160%);
-  padding:11px 20px;border-radius:999px;
-  background:var(--paper);color:var(--ink);
-  font-size:14px;font-weight:600;text-decoration:none;
-  transition:transform .25s var(--ease);
+:focus-visible{
+  outline:2px solid var(--lagoon);
+  outline-offset:3px;
+  border-radius:6px;
 }
-.skip:focus-visible{transform:translate(-50%,0);}
 
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px;}
+h1,h2,h3,blockquote,p{margin:0;}
 
 /* ============================================================
-   MASTHEAD
+   Reading progress, hairline across the top
+   ============================================================ */
+.progress{
+  position:fixed;
+  top:0;left:0;
+  height:2px;
+  width:100%;
+  transform:scaleX(0);
+  transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--lagoon),var(--gold));
+  z-index:60;
+  pointer-events:none;
+}
+
+/* ============================================================
+   Masthead
    ============================================================ */
 .masthead{
-  position:fixed;
-  inset:0 0 auto;
-  z-index:20;
+  position:sticky;
+  top:0;
+  z-index:50;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:16px;
-  padding:14px clamp(16px,4vw,34px);
-  padding-top:max(14px, env(safe-area-inset-top));
-  color:var(--paper);
-  background:rgba(4,33,42,0);
+  gap:14px;
+  padding:15px var(--gut);
+  padding-top:calc(15px + env(safe-area-inset-top));
+  background:transparent;
   border-bottom:1px solid transparent;
-  transition:background .45s var(--ease-io), border-color .45s var(--ease-io), padding .45s var(--ease-io);
+  transition:background .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);
 }
 .masthead.is-stuck{
-  background:rgba(4,33,42,.88);
-  border-bottom-color:rgba(207,237,231,.14);
-  padding-top:max(10px, env(safe-area-inset-top));
-  padding-bottom:10px;
-  backdrop-filter:blur(16px) saturate(1.3);
-  -webkit-backdrop-filter:blur(16px) saturate(1.3);
+  background:rgba(234,239,240,.78);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);
+  backdrop-filter:blur(16px) saturate(150%);
+  border-bottom-color:var(--rule);
+  box-shadow:0 12px 30px -26px rgba(8,33,41,.6);
+}
+/* while it is clear, the wordmark needs its own legibility */
+.masthead:not(.is-stuck) .mark-name,
+.masthead:not(.is-stuck) .masthead-where{
+  text-shadow:0 1px 18px rgba(255,255,255,.85),0 1px 3px rgba(255,255,255,.7);
 }
 
-.mark{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;}
+.mark{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:var(--ink);
+  min-width:0;
+}
 .mark svg{width:34px;height:34px;flex:none;}
 .mark-name{
-  display:block;
-  font-family:var(--display);
-  font-size:19px;
-  line-height:1;
-  letter-spacing:.005em;
-  color:var(--paper);
-}
-.mark-sub{
-  display:block;
-  margin-top:3px;
-  font-size:9.5px;
-  font-weight:600;
-  letter-spacing:.26em;
-  text-transform:uppercase;
-  color:color-mix(in oklab, var(--foam) 70%, transparent);
+  font-family:var(--serif);
+  font-size:clamp(18px,3.4vw,22px);
+  line-height:1.1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .masthead-where{
-  font-size:10.5px;
-  font-weight:600;
-  letter-spacing:.24em;
+  font-size:11.5px;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  color:color-mix(in oklab, var(--foam) 78%, transparent);
+  color:var(--ink-3);
   white-space:nowrap;
 }
-@media (max-width:560px){.masthead-where{display:none;}}
 
 /* ============================================================
-   HERO — clip over photograph over drawn bay
+   The page backdrop. One photograph, fixed behind everything.
+   No photograph and the layer removes itself, leaving plain paper,
+   which is a finished look rather than a gap.
+
+   --veil washes paper over the picture. It is off. If a future
+   photograph is busy enough to fight the type, raise it: .25 is a
+   light haze, .5 is halfway, 1 hides the picture completely.
+
+   --focus is where the crop is anchored. The title sits on the left,
+   so point this at the calm part of your photograph. In the current
+   picture the sky and water are on the left and the palms are on the
+   right, so phones pull left to keep the type off the leaves.
+   ============================================================ */
+:root{--veil:0;--focus:50% 45%;}
+
+.page-bg{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  overflow:hidden;
+}
+.page-bg picture{position:absolute;inset:0;display:block;}
+.hero-photo,.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:var(--focus);
+}
+.page-veil{
+  position:absolute;
+  inset:0;
+  opacity:var(--veil);
+  background:var(--paper);
+}
+
+/* ============================================================
+   Hero
    ============================================================ */
 .hero{
   position:relative;
-  min-height:clamp(500px, 86svh, 780px);
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
-  isolation:isolate;
-  background:#0B4453;
+  padding:clamp(56px,11vh,124px) var(--gut) clamp(48px,8vh,88px);
 }
-.hero-media{position:absolute;inset:0;z-index:0;}
-.hero-media > *{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-
-/* drawn bay, the floor of the stack — a calm dark placeholder so the
-   first paint blends straight into the photo instead of flashing a
-   bright cartoon strip before it arrives */
-.hero-drawn{
-  z-index:0;
-  background:linear-gradient(180deg,#0B4453 0%,#0E6A78 55%,#04212A 100%);
-}
-
-.hero-media picture{position:absolute;inset:0;display:block;}
-.hero-photo{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 46%;}
-.hero-video{z-index:2;background:transparent;}
-
-/* a slow push in, so a still photograph is never quite static */
-.hero-photo,.hero-drawn{
-  transform-origin:60% 58%;
-  animation:pushIn 42s var(--ease-io) infinite alternate;
-}
-@keyframes pushIn{from{transform:scale(1.015);}to{transform:scale(1.11);}}
-
-.hero-shade{
-  z-index:3;
-  background:
-    linear-gradient(180deg, rgba(4,25,32,.62) 0%, rgba(4,25,32,.10) 20%, rgba(4,25,32,.32) 48%, rgba(4,25,32,.76) 76%, rgba(4,33,42,.97) 100%),
-    radial-gradient(120% 74% at 12% 88%, rgba(4,25,32,.60), transparent 62%);
-}
-
 .hero-copy{
   position:relative;
-  z-index:4;
-  width:var(--shell);
-  margin-inline:auto;
-  padding:0 clamp(20px,5vw,34px) clamp(150px,19vw,200px);
-  color:var(--paper);
+  z-index:1;
+  max-width:1240px;
+  margin:0 auto;
 }
+/* The type sits straight on the photograph, so it carries its own
+   legibility as a soft halo rather than a panel behind it. */
+.hero-copy > *{
+  text-shadow:0 1px 26px rgba(255,255,255,.8),0 1px 4px rgba(255,255,255,.7);
+}
+
 .hero-eyebrow{
-  display:flex;
+  display:inline-flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:20px;
-  font-size:10.5px;
-  font-weight:600;
-  letter-spacing:.3em;
+  gap:12px;
+  font-size:11.5px;
+  letter-spacing:.22em;
   text-transform:uppercase;
-  color:color-mix(in oklab, var(--foam) 88%, transparent);
+  color:var(--gold);
 }
 .hero-eyebrow::after{
   content:"";
+  width:clamp(40px,9vw,90px);
   height:1px;
-  flex:1 1 auto;
-  max-width:190px;
-  background:linear-gradient(90deg,var(--gold),transparent);
-  transform-origin:left;
-  animation:drawRule 1.5s .35s var(--ease) both;
-}
-@keyframes drawRule{from{transform:scaleX(0);}to{transform:scaleX(1);}}
-
-.hero h1{
-  font-family:var(--display);
-  font-size:clamp(46px,9.6vw,104px);
-  line-height:.96;
-  letter-spacing:-.022em;
-  max-width:14ch;
-  text-shadow:0 2px 30px rgba(4,25,32,.5);
-}
-.hero h1 em{font-style:italic;color:var(--foam);}
-.hero-lede{
-  max-width:44ch;
-  margin-top:22px;
-  font-size:clamp(15.5px,2vw,18.5px);
-  color:color-mix(in oklab, var(--paper) 84%, transparent);
-  text-shadow:0 1px 16px rgba(4,25,32,.6);
-}
-
-.hero-copy > *{animation:liftIn 1.05s var(--ease) both;}
-.hero-copy > :nth-child(1){animation-delay:.06s;}
-.hero-copy > :nth-child(2){animation-delay:.16s;}
-.hero-copy > :nth-child(3){animation-delay:.28s;}
-@keyframes liftIn{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:none;}}
-
-.scroll-cue{
-  position:absolute;
-  z-index:5;
-  right:clamp(20px,5vw,44px);
-  bottom:clamp(150px,19vw,200px);
-  display:grid;
-  gap:12px;
-  justify-items:center;
-  text-decoration:none;
-  color:color-mix(in oklab, var(--foam) 76%, transparent);
-  font-size:9.5px;
-  font-weight:600;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-}
-.scroll-cue span{writing-mode:vertical-rl;}
-.scroll-cue i{
-  display:block;
-  width:1px;height:64px;
-  background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--foam) 55%, transparent));
-  position:relative;overflow:hidden;
-}
-.scroll-cue i::after{
-  content:"";position:absolute;left:-1px;width:3px;height:16px;border-radius:3px;
   background:var(--gold);
-  animation:cueDrop 2.6s var(--ease-io) infinite;
+  opacity:.55;
 }
-@keyframes cueDrop{0%{top:-18px;opacity:0;}25%{opacity:1;}75%{opacity:1;}100%{top:64px;opacity:0;}}
-@media (max-width:900px){.scroll-cue{display:none;}}
+.hero h1{
+  margin-top:clamp(16px,2.6vh,26px);
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(42px,9.6vw,96px);
+  line-height:.99;
+  letter-spacing:-.022em;
+  text-wrap:balance;
+  max-width:16ch;
+}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-lede{
+  margin-top:clamp(18px,2.8vh,26px);
+  max-width:56ch;
+  font-size:clamp(16px,2.1vw,19px);
+  color:var(--ink-2);
+}
+
 
 /* ============================================================
-   PANEL — sand rail on the left, form on the right
+   Layout
    ============================================================ */
 .wrap{
-  position:relative;
-  scroll-margin-top:88px;
+  padding:clamp(34px,7vh,76px) var(--gut) clamp(56px,9vh,104px);
   outline:none;
-  z-index:5;
-  width:var(--shell);
-  margin:clamp(-172px,-15vw,-120px) auto 0;
-  padding:0 clamp(14px,4vw,34px) 48px;
 }
-
 .panel{
-  /* dark theme for the review area — these overrides only reach this
-     panel and what's inside it (rail, form, inputs, buttons); the rest
-     of the page (masthead, hero, footer, thank-you dialog) is untouched */
-  --white:#12333D;
-  --sand:#0D2A33;
-  --panel-surface:#0A222A;
-  --text:#EAF4F2;
-  --text-2:#A7C6C8;
-  --text-3:#72999D;
-  --line:color-mix(in oklab, white 12%, transparent);
-  --line-2:color-mix(in oklab, white 24%, transparent);
-  --lagoon:#4FD8DE;
-
+  margin:0 auto;
+  width:100%;
+  max-width:1240px;
   display:grid;
+  gap:clamp(24px,4vw,48px);
   grid-template-columns:1fr;
-  border-radius:clamp(20px,3vw,30px);
-  overflow:hidden;
-  background:var(--white);
-  box-shadow:var(--panel-shadow), inset 0 0 0 1px rgba(255,255,255,.08);
-  animation:panelUp 1.1s .18s var(--ease) both;
-}
-@keyframes panelUp{from{opacity:0;transform:translateY(38px) scale(.985);}to{opacity:1;transform:none;}}
-
-@media (min-width:940px){
-  .panel{grid-template-columns:minmax(0,318px) minmax(0,1fr);}
+  align-items:start;
 }
 
-/* ---- the sand rail ---- */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+}
+.reveal.is-in{opacity:1;transform:none;}
+html:not(.js) .reveal{opacity:1;transform:none;}
+
+/* ============================================================
+   The rail, on the paper
+   ============================================================ */
 .rail{
-  position:relative;
-  padding:clamp(34px,4vw,44px) clamp(26px,3.4vw,36px);
-  background:
-    radial-gradient(140% 80% at 0% 0%, color-mix(in oklab, var(--foam) 55%, var(--sand)), transparent 58%),
-    linear-gradient(170deg, var(--sand), color-mix(in oklab, var(--sand) 60%, var(--panel-surface)));
-  border-bottom:1px solid var(--line);
+  padding:clamp(24px,4vw,34px);
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:var(--r-lg);
+  background:rgba(247,249,249,.72);
+  -webkit-backdrop-filter:blur(14px) saturate(150%);
+  backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 20px 50px -38px rgba(8,33,41,.6);
 }
-@media (min-width:940px){
-  .rail{border-bottom:0;border-right:1px solid var(--line);}
-}
-.rail::after{
-  content:"";
-  position:absolute;
-  inset:auto 0 0;
-  height:3px;
-  background:linear-gradient(90deg,var(--shallow),var(--gold));
-  opacity:.5;
-}
-@media (min-width:940px){.rail::after{inset:0 0 auto auto;width:3px;height:100%;background:linear-gradient(180deg,var(--shallow),var(--gold));}}
-
-.crest{
-  width:62px;height:62px;border-radius:50%;
-  display:grid;place-items:center;
-  background:var(--ink);
-  box-shadow:0 12px 26px -14px rgba(4,33,42,.9), 0 0 0 5px color-mix(in oklab, var(--gold) 26%, transparent);
-}
-.crest svg{width:38px;height:38px;}
+.crest{margin-bottom:20px;}
+.crest svg{width:42px;height:42px;}
 
 .rail blockquote{
-  margin:24px 0 0;
-  font-family:var(--display);
-  font-style:italic;
-  font-size:clamp(21px,2.5vw,25px);
-  line-height:1.32;
-  letter-spacing:-.01em;
-  color:var(--text);
+  font-family:var(--serif);
+  font-size:clamp(21px,3.4vw,28px);
+  line-height:1.26;
+  color:var(--ink);
+  text-wrap:pretty;
 }
 .rail-by{
-  margin-top:14px;
-  font-size:10.5px;
-  font-weight:600;
-  letter-spacing:.22em;
+  margin-top:12px;
+  font-size:11.5px;
+  letter-spacing:.16em;
   text-transform:uppercase;
-  color:var(--text-3);
+  color:var(--ink-3);
 }
 
-.assurances{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:15px;}
-.assurances li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--text-2);}
-.assurances svg{width:17px;height:17px;flex:none;margin-top:4px;stroke:var(--lagoon);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
-.assurances b{display:block;font-weight:600;color:var(--text);}
+.assurances{
+  list-style:none;
+  margin:26px 0 0;
+  padding:24px 0 0;
+  border-top:1px solid var(--rule);
+  display:grid;
+  gap:18px;
+}
+.assurances li{display:flex;gap:13px;align-items:flex-start;}
+.assurances svg{
+  width:17px;height:17px;flex:none;margin-top:4px;
+  stroke:var(--lagoon);fill:none;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.assurances b{
+  display:block;
+  font-weight:600;
+  font-size:14.5px;
+  color:var(--ink);
+}
+.assurances span{font-size:14px;color:var(--ink-2);line-height:1.5;}
 
 .rail-foot{
-  margin-top:30px;
+  margin-top:24px;
   padding-top:20px;
-  border-top:1px solid var(--line);
-  font-size:12.5px;
-  letter-spacing:.04em;
-  color:var(--text-3);
+  border-top:1px solid var(--rule);
+  font-size:11.5px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--ink-3);
 }
 
-/* ---- the form side ---- */
-.form-side{container-type:inline-size;padding:clamp(30px,4.2vw,50px) clamp(20px,3.6vw,50px) clamp(30px,4vw,46px);}
+/* ============================================================
+   THE REVIEW CARD. The one dark object on the page.
+   ============================================================ */
+.form-side{
+  position:relative;
+  padding:var(--card);
+  border-radius:var(--r-lg);
+  background:linear-gradient(172deg,var(--shelf),var(--abyss) 62%);
+  color:var(--sand);
+  box-shadow:0 40px 80px -40px rgba(5,32,39,.85),0 2px 8px -2px rgba(5,32,39,.3);
+  overflow:hidden;
+}
+/* a lit edge along the top, so the card reads as an object with weight */
+.form-side::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold-lit) 22%,var(--lagoon-lit) 78%,transparent);
+  opacity:.85;
+}
+.form-side::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(75% 45% at 88% 4%, rgba(72,214,200,.13), transparent 62%);
+}
+.form-side > *{position:relative;z-index:1;}
 
-.tide{
+.card-head{
   display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:clamp(26px,3.4vw,36px);
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:clamp(20px,3.2vw,26px);
 }
+.card-title{
+  font-family:var(--serif);
+  font-size:clamp(24px,4vw,31px);
+  line-height:1.15;
+  color:var(--sand);
+}
+.card-step{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--sand-3);
+  font-variant-numeric:tabular-nums;
+}
+
+/* --- the tide: how far through the guest is --- */
+.tide{margin-bottom:clamp(22px,3.5vw,30px);}
 .tide-track{
   position:relative;
-  flex:1;
-  height:6px;
+  height:3px;
   border-radius:99px;
-  background:color-mix(in oklab, var(--foam) 60%, var(--panel-surface));
+  background:rgba(28,75,87,.9);
   overflow:hidden;
 }
 .tide-fill{
-  position:absolute;
-  inset:0 auto 0 0;
+  height:100%;
   width:var(--tide,0%);
   border-radius:99px;
-  background:linear-gradient(90deg,var(--lagoon),var(--shallow) 62%,var(--gold));
-  transition:width .65s var(--ease);
-}
-.tide-fill::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
-  transform:translateX(-100%);
-  animation:tideShine 2.8s var(--ease-io) infinite;
+  background:linear-gradient(90deg,var(--lagoon-lit),var(--gold-lit));
+  box-shadow:0 0 14px rgba(72,214,200,.5);
+  transition:width .6s var(--swell);
 }
 .tide-label{
-  font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--text-3);white-space:nowrap;font-variant-numeric:tabular-nums;
+  display:block;
+  margin-top:10px;
+  font-size:11px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--sand-3);
 }
-@keyframes tideShine{0%{transform:translateX(-100%);}60%,100%{transform:translateX(220%);}}
 
-.grp{margin-bottom:clamp(24px,3vw,30px);}
-.grp:last-of-type{margin-bottom:0;}
+.error{margin-bottom:0;font-size:14.5px;color:#FFA893;}
+.error:not(:empty){
+  margin-bottom:20px;
+  padding:12px 15px;
+  border:1px solid rgba(255,168,147,.42);
+  border-radius:12px;
+  background:rgba(255,168,147,.1);
+}
+
+.grp{border:0;margin:0 0 clamp(22px,3.4vw,28px);padding:0;min-width:0;}
+.grp.duo{display:grid;gap:16px;grid-template-columns:1fr;}
 
 .lab{
   display:block;
   margin-bottom:9px;
-  font-size:11px;
+  font-size:11.5px;
   font-weight:600;
-  letter-spacing:.2em;
+  letter-spacing:.15em;
   text-transform:uppercase;
-  color:var(--text-2);
+  color:var(--sand-2);
 }
-.lab .opt{font-weight:400;letter-spacing:.06em;text-transform:none;color:var(--text-3);}
+.opt{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--sand-3);}
 
-.duo{display:grid;gap:clamp(16px,2.4vw,22px);grid-template-columns:1fr;}
-@container (min-width:560px){.duo{grid-template-columns:1fr 1fr;}}
-
-input[type=text],textarea{
+.form-side input[type="text"],
+.form-side textarea{
   width:100%;
   padding:14px 16px;
-  font:inherit;
-  font-size:16.5px;
-  color:var(--text);
-  background:var(--panel-surface);
-  border:1.5px solid var(--line-2);
-  border-radius:13px;
-  transition:border-color .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+  border:1px solid var(--deep-line);
+  border-radius:var(--r);
+  background:rgba(4,22,27,.62);
+  color:var(--sand);
+  font-size:16px;
+  line-height:1.55;
+  transition:border-color .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);
 }
-input[type=text]::placeholder,textarea::placeholder{color:var(--text-3);}
-input[type=text]:hover,textarea:hover{border-color:color-mix(in oklab, var(--lagoon) 40%, transparent);}
-input[type=text]:focus,textarea:focus{
+.form-side input[type="text"]::placeholder,
+.form-side textarea::placeholder{color:#4C737D;}
+.form-side input[type="text"]:focus,
+.form-side textarea:focus{
   outline:none;
-  background:var(--white);
-  border-color:var(--shallow);
-  box-shadow:0 0 0 4px color-mix(in oklab, var(--shallow) 26%, transparent);
+  border-color:var(--gold-lit);
+  background:rgba(4,22,27,.85);
+  box-shadow:0 0 0 3px rgba(233,180,91,.15);
 }
-textarea{min-height:168px;resize:vertical;line-height:1.66;}
-@supports (field-sizing:content){
-  textarea{field-sizing:content;max-height:60vh;}
+.form-side textarea{
+  min-height:clamp(150px,22vh,204px);
+  resize:vertical;
+  scrollbar-width:thin;
+  scrollbar-color:var(--deep-line-2) transparent;
 }
+.form-side textarea::-webkit-scrollbar{width:9px;}
+.form-side textarea::-webkit-scrollbar-thumb{
+  background:#2C6474;
+  border-radius:99px;
+  border:2px solid transparent;
+  background-clip:padding-box;
+}
+.form-side textarea::-webkit-scrollbar-thumb:hover{background:var(--gold-lit);background-clip:padding-box;}
 
 .counter{
   margin-top:8px;
-  font-size:12px;
-  color:var(--text-3);
   text-align:right;
+  font-size:12px;
   font-variant-numeric:tabular-nums;
+  color:var(--sand-3);
+  transition:color .25s var(--ease);
 }
-.counter.is-low{color:var(--lagoon);}
+.counter.is-low{color:var(--gold-lit);}
 
-/* ---- rating: stars sitting on shallow water ---- */
-fieldset{border:0;margin:0;padding:0;}
-
-.rating{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-  padding:22px 8px 24px;
-  border-radius:16px 16px 4px 4px;
-  background:linear-gradient(180deg, transparent 40%, color-mix(in oklab, var(--shallow) 16%, transparent) 100%);
-  overflow:hidden;
+/* --- rating --- */
+.rating{display:flex;gap:clamp(6px,1.8vw,11px);max-width:440px;}
+.rating input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;}
+.rating label{
+  flex:1 1 0;
+  display:grid;
+  place-items:center;
+  padding:clamp(9px,2vw,13px) 0;
+  border:1px solid var(--deep-line);
+  border-radius:13px;
+  background:rgba(4,22,27,.45);
+  cursor:pointer;
+  transition:border-color .25s var(--ease),background .25s var(--ease);
 }
-.rating::after{
-  content:"";
-  position:absolute;
-  inset:auto 0 0;
-  height:2px;
-  background:linear-gradient(90deg, transparent, var(--shallow), transparent);
-  opacity:.55;
-}
-.rating input{position:absolute;opacity:0;width:1px;height:1px;}
-.rating label{margin:0;padding:5px;cursor:pointer;line-height:0;border-radius:10px;}
 .rating svg{
-  width:clamp(38px,8.4vw,48px);
-  height:clamp(38px,8.4vw,48px);
-  fill:none;
-  stroke:color-mix(in oklab, var(--text-3) 65%, transparent);
-  stroke-width:1.5;
-  stroke-linejoin:round;
-  transition:fill .22s var(--ease), stroke .22s var(--ease), transform .5s var(--swell), filter .22s var(--ease);
+  width:clamp(25px,6.6vw,32px);
+  height:clamp(25px,6.6vw,32px);
+  fill:none;stroke:#3E6E79;stroke-width:1.5;stroke-linejoin:round;
+  transition:fill .3s var(--ease),stroke .3s var(--ease),transform .3s var(--swell);
 }
-.rating input:focus-visible + label{outline:3px solid var(--gold);outline-offset:2px;}
+.rating label[data-lit]{border-color:rgba(233,180,91,.5);background:rgba(233,180,91,.09);}
 .rating label[data-lit] svg{
-  fill:var(--gold);
-  stroke:color-mix(in oklab, var(--gold) 70%, var(--ink));
-  filter:drop-shadow(0 5px 10px color-mix(in oklab, var(--gold) 45%, transparent));
+  fill:var(--gold-lit);stroke:var(--gold-lit);
+  filter:drop-shadow(0 3px 10px rgba(233,180,91,.4));
 }
+.rating input:focus-visible + label{outline:2px solid var(--lagoon-lit);outline-offset:2px;}
 @media (hover:hover){
-  .rating:hover label svg{fill:color-mix(in oklab, var(--gold) 55%, white);stroke:color-mix(in oklab, var(--gold) 70%, var(--ink));}
-  .rating:hover label:hover svg{transform:translateY(-6px) scale(1.08);}
-  .rating label:hover ~ label svg{fill:none;stroke:color-mix(in oklab, var(--text-3) 65%, transparent);filter:none;}
+  .rating label:hover{border-color:var(--deep-line-2);}
+  .rating label:hover svg{transform:translateY(-4px) scale(1.06);}
 }
 .rating label[data-pop] svg{animation:pop .55s var(--swell);}
-@keyframes pop{0%{transform:scale(1);}42%{transform:translateY(-7px) scale(1.16);}100%{transform:none;}}
+@keyframes pop{0%{transform:scale(.7);}55%{transform:scale(1.22);}100%{transform:scale(1);}}
 
 .rating-caption{
-  margin-top:14px;
-  text-align:center;
-  font-family:var(--display);
-  font-style:italic;
-  font-size:clamp(18px,2.4vw,21px);
-  line-height:1.4;
-  color:var(--text-2);
-  min-height:1.5em;
-  transition:opacity .22s var(--ease);
+  margin-top:13px;
+  font-family:var(--serif);
+  font-size:clamp(18px,3.2vw,22px);
+  line-height:1.3;
+  color:var(--gold-lit);
+  transition:opacity .18s var(--ease),transform .18s var(--ease);
 }
-.rating-caption.is-swap{opacity:0;}
+.rating-caption.is-swap{opacity:0;transform:translateY(5px);}
 
-/* quiet note that opens on 1–3 stars, closed with no JS */
 .aside-note{
   display:grid;
   grid-template-rows:0fr;
-  opacity:0;
-  transition:grid-template-rows .55s var(--ease), opacity .35s var(--ease), margin .55s var(--ease);
   margin-top:0;
+  transition:grid-template-rows .45s var(--ease),margin-top .45s var(--ease);
 }
-.aside-note > div{overflow:hidden;min-height:0;}
-#reviewForm.is-private .aside-note{grid-template-rows:1fr;opacity:1;margin-top:18px;}
+.aside-note > div{overflow:hidden;}
 .aside-note p{
-  padding:14px 17px;
+  padding:15px 17px;
+  border:1px solid rgba(72,214,200,.32);
+  border-radius:13px;
+  background:rgba(72,214,200,.08);
   font-size:14.5px;
-  line-height:1.55;
-  color:var(--text-2);
-  background:color-mix(in oklab, var(--foam) 42%, var(--panel-surface));
-  border-left:3px solid var(--lagoon);
-  border-radius:4px 12px 12px 4px;
+  line-height:1.58;
+  color:var(--sand-2);
 }
+form.is-private .aside-note{grid-template-rows:1fr;margin-top:18px;}
 
-/* ---- writing prompts ---- */
-.prompts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+/* --- prompts --- */
+.prompts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 .prompt{
-  font:inherit;
+  padding:8px 15px;
+  border:1px solid var(--deep-line);
+  border-radius:99px;
+  background:transparent;
+  color:var(--sand-2);
   font-size:13.5px;
-  font-weight:500;
-  padding:7px 14px;
-  color:var(--lagoon);
-  background:color-mix(in oklab, var(--foam) 38%, var(--panel-surface));
-  border:1px solid color-mix(in oklab, var(--lagoon) 22%, transparent);
-  border-radius:999px;
   cursor:pointer;
-  transition:transform .2s var(--swell), background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), opacity .2s var(--ease);
+  transition:border-color .25s var(--ease),color .25s var(--ease),background .25s var(--ease);
 }
-.prompt:hover{background:color-mix(in oklab, var(--shallow) 22%, var(--white));transform:translateY(-2px);}
-.prompt:active{transform:translateY(0);}
-.prompt[data-used]{opacity:.42;pointer-events:none;}
+.prompt:hover{border-color:var(--gold-lit);color:var(--sand);}
+.prompt[data-used]{
+  border-color:rgba(72,214,200,.45);
+  background:rgba(72,214,200,.1);
+  color:var(--lagoon-lit);
+}
 
-/* ---- consent ---- */
+/* --- where it goes: the consent switch --- */
+.routing{
+  margin:0 0 clamp(22px,3.4vw,28px);
+  border:1px solid var(--deep-line);
+  border-radius:var(--r);
+  background:rgba(4,22,27,.45);
+  overflow:hidden;
+}
 .consent{
   display:flex;
-  gap:13px;
   align-items:flex-start;
-  padding:16px 18px;
-  border-radius:14px;
-  background:color-mix(in oklab, var(--foam) 32%, var(--panel-surface));
-  border:1px solid transparent;
-  transition:background .25s var(--ease), border-color .25s var(--ease);
+  gap:14px;
+  padding:17px 18px;
+  cursor:pointer;
 }
-.consent:has(input:checked){
-  background:color-mix(in oklab, var(--shallow) 15%, var(--white));
-  border-color:color-mix(in oklab, var(--lagoon) 26%, transparent);
+.consent input{
+  appearance:none;
+  -webkit-appearance:none;
+  flex:none;
+  width:22px;height:22px;
+  margin:1px 0 0;
+  border:1.5px solid var(--deep-line-2);
+  border-radius:7px;
+  background:rgba(4,22,27,.7);
+  cursor:pointer;
+  display:grid;
+  place-content:center;
+  transition:background .2s var(--ease),border-color .2s var(--ease);
 }
-.consent input{width:19px;height:19px;margin:3px 0 0;flex:none;accent-color:var(--lagoon);cursor:pointer;}
-.consent label{margin:0;font-size:14.5px;line-height:1.5;color:var(--text-2);cursor:pointer;}
+.consent input::before{
+  content:"";
+  width:11px;height:11px;
+  transform:scale(0);
+  transform-origin:center;
+  transition:transform .2s var(--swell);
+  clip-path:polygon(14% 44%,0 59%,39% 100%,100% 22%,85% 7%,39% 70%);
+  background:#06222A;
+}
+.consent input:checked{background:var(--gold-lit);border-color:var(--gold-lit);}
+.consent input:checked::before{transform:scale(1);}
+.consent-text{font-size:14.5px;line-height:1.5;color:var(--sand);}
+.consent-text small{
+  display:block;
+  margin-top:4px;
+  font-size:13px;
+  color:var(--sand-3);
+  line-height:1.5;
+}
+
+/* the line that spells out where this review will actually land */
+.routing-out{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 18px;
+  border-top:1px solid var(--deep-line);
+  background:rgba(4,22,27,.45);
+  font-size:13.5px;
+  color:var(--sand-2);
+}
+.routing-out svg{
+  width:15px;height:15px;flex:none;
+  fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.routing-out.to-social{color:var(--lagoon-lit);}
+.routing-out.to-google{color:var(--gold-lit);}
 
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
 
-/* ---- buttons ---- */
+/* --- buttons --- */
 .btn{
   position:relative;
   display:inline-flex;
@@ -652,275 +672,352 @@ fieldset{border:0;margin:0;padding:0;}
   justify-content:center;
   gap:10px;
   width:100%;
-  padding:18px 24px;
-  font:inherit;
-  font-size:16px;
-  font-weight:600;
-  letter-spacing:.01em;
-  text-decoration:none;
-  color:var(--paper);
-  background:var(--ink);
+  padding:16px 26px;
   border:0;
-  border-radius:14px;
+  border-radius:var(--r);
+  background:linear-gradient(180deg,var(--gold-lit),var(--gold-deep));
+  color:#0B2028;
+  font-size:16px;
+  font-weight:650;
+  text-decoration:none;
   cursor:pointer;
-  overflow:hidden;
-  transition:transform .22s var(--swell), background .25s var(--ease), box-shadow .25s var(--ease), opacity .2s var(--ease);
+  box-shadow:0 14px 30px -16px rgba(233,180,91,.8);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),filter .25s var(--ease);
 }
-.btn::before{
-  content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(105deg, transparent, color-mix(in oklab, var(--gold) 42%, transparent), transparent);
-  transform:translateX(var(--sheen));
-  transition:--sheen .85s var(--ease-io);
-}
-.btn:hover{background:var(--ink-2);transform:translateY(-2px);box-shadow:0 16px 30px -18px rgba(4,33,42,.9);}
-.btn:hover::before{--sheen:160%;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px rgba(233,180,91,.9);}
 .btn:active{transform:translateY(0);}
-.btn span{position:relative;}
-.btn svg{position:relative;width:18px;height:18px;flex:none;}
-.btn[disabled],.btn[aria-busy="true"]{opacity:.62;cursor:progress;transform:none;box-shadow:none;}
-
-.btn-gold{background:var(--gold);color:var(--ink);}
-.btn-gold:hover{background:color-mix(in oklab, var(--gold) 86%, #fff);}
-.btn-gold::before{background:linear-gradient(105deg, transparent, rgba(255,255,255,.6), transparent);}
-.btn-quiet{background:transparent;color:var(--ink);border:1.5px solid var(--line-2);}
-.btn-quiet:hover{background:color-mix(in oklab, var(--ink) 5%, transparent);box-shadow:none;}
-
-.spinner{
-  position:relative;
-  width:17px;height:17px;flex:none;
-  border-radius:50%;
-  border:2px solid color-mix(in oklab, var(--paper) 35%, transparent);
-  border-top-color:var(--paper);
-  animation:spin .7s linear infinite;
-  display:none;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
-.btn[aria-busy="true"] .spinner{display:block;}
+.btn svg{width:18px;height:18px;flex:none;}
+.btn[aria-busy="true"]{filter:saturate(.6);pointer-events:none;}
 .btn[aria-busy="true"] .btn-icon{display:none;}
 
-.submit-row{margin-top:clamp(24px,3vw,30px);}
-.fineprint{margin-top:14px;text-align:center;font-size:12.5px;color:var(--text-3);}
-
-.error{
-  display:flex;gap:10px;align-items:flex-start;
-  margin-bottom:20px;padding:13px 16px;
-  font-size:14.5px;line-height:1.5;
-  color:#8A2C1E;
-  background:#FBE9E3;
-  border-left:3px solid #C24A32;
-  border-radius:4px 12px 12px 4px;
+.spinner{display:none;}
+.btn[aria-busy="true"] .spinner{
+  display:block;
+  width:17px;height:17px;
+  border:2px solid rgba(11,32,40,.3);
+  border-top-color:#0B2028;
+  border-radius:50%;
+  animation:spin .7s linear infinite;
 }
-.error:empty{display:none;margin:0;padding:0;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.btn-quiet{
+  background:transparent;
+  color:var(--sand);
+  border:1px solid var(--deep-line-2);
+  box-shadow:none;
+  font-weight:500;
+}
+.btn-quiet:hover{background:rgba(20,65,80,.55);border-color:var(--gold-lit);box-shadow:none;}
+
+.submit-row{margin-top:clamp(24px,4vw,30px);}
+.fineprint{
+  margin-top:14px;
+  text-align:center;
+  font-size:12.5px;
+  line-height:1.55;
+  color:var(--sand-3);
+}
 
 /* ============================================================
-   FOOT
+   Footer. Dark, to bookend the review card.
    ============================================================ */
 .page-foot{
-  position:relative;z-index:5;
-  width:var(--shell);
-  margin-inline:auto;
-  padding:8px clamp(20px,5vw,34px) clamp(40px,7vw,64px);
-  text-align:center;
-  color:color-mix(in oklab, var(--paper) 74%, transparent);
-  content-visibility:auto;
-  contain-intrinsic-size:auto 260px;
+  position:relative;
+  background:rgba(5,32,39,.93);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  color:var(--sand-2);
+  padding:clamp(44px,7vh,72px) var(--gut) calc(clamp(30px,5vh,44px) + env(safe-area-inset-bottom));
 }
-.foot-name{font-family:var(--display);font-size:22px;color:var(--paper);}
-.foot-where{margin-top:5px;font-size:13px;letter-spacing:.05em;}
-.photo-credit{margin-top:10px;font-size:11.5px;opacity:.62;}
-.photo-credit a{color:inherit;}
+.foot-inner{
+  max-width:1240px;
+  margin:0 auto;
+  display:grid;
+  gap:clamp(26px,4vw,44px);
+  grid-template-columns:1fr;
+}
+.foot-brand{display:flex;align-items:center;gap:13px;}
+.foot-brand svg{width:38px;height:38px;flex:none;}
+.foot-name{
+  font-family:var(--serif);
+  font-size:clamp(21px,3.6vw,26px);
+  color:var(--sand);
+  line-height:1.15;
+}
+.foot-where{margin-top:12px;font-size:14px;line-height:1.65;color:var(--sand-2);}
+.foot-head{
+  font-size:11px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--sand-3);
+  margin-bottom:12px;
+}
+.foot-links{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
+.foot-links a{
+  color:var(--sand-2);
+  text-decoration:none;
+  font-size:14.5px;
+  border-bottom:1px solid transparent;
+  transition:color .25s var(--ease),border-color .25s var(--ease);
+}
+.foot-links a:hover{color:var(--gold-lit);border-bottom-color:var(--gold-lit);}
+
+.foot-bar{
+  max-width:1240px;
+  margin:clamp(32px,5vh,52px) auto 0;
+  padding-top:22px;
+  border-top:1px solid var(--deep-line);
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.copyright{font-size:12.5px;color:var(--sand-3);line-height:1.6;}
+.photo-credit{font-size:12px;color:var(--sand-3);margin-top:6px;}
+.photo-credit a{color:var(--sand-2);}
 
 .credit{
-  display:inline-grid;
-  justify-items:center;
-  gap:2px;
-  margin-top:26px;
-  padding:14px 26px;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 15px;
+  border:1px solid var(--deep-line);
+  border-radius:99px;
   text-decoration:none;
-  border-radius:16px;
-  background:rgba(252,248,242,.06);
-  border:1px solid rgba(252,248,242,.14);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  transition:background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+  transition:border-color .3s var(--ease),background .3s var(--ease);
 }
-.credit:hover{background:rgba(252,248,242,.11);border-color:color-mix(in oklab, var(--gold) 52%, transparent);transform:translateY(-2px);}
-.credit-label{font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(252,248,242,.5);}
-.credit-name{font-family:var(--display);font-size:19px;color:var(--paper);}
-.credit-site{display:inline-flex;align-items:center;gap:5px;margin-top:1px;font-size:12.5px;color:var(--gold);}
-.credit-site svg{width:12px;height:12px;}
+.credit:hover{border-color:var(--gold-lit);background:rgba(20,65,80,.4);}
+.credit-label{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--sand-3);}
+.credit-name{font-family:var(--serif);font-size:15.5px;color:var(--sand);}
+.credit svg{width:11px;height:11px;stroke:var(--lagoon-lit);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;}
 
 /* ============================================================
-   THANK YOU
+   Thank you dialog
    ============================================================ */
 dialog{
-  width:min(94vw,500px);
-  padding:0;border:0;
-  border-radius:clamp(20px,3vw,28px);
-  background:var(--paper);
-  color:var(--text);
-  box-shadow:0 50px 110px -40px rgba(2,18,24,.9);
-  opacity:0;
-  transform:translateY(22px) scale(.97);
-  transition:opacity .4s var(--ease), transform .55s var(--ease), overlay .55s allow-discrete, display .55s allow-discrete;
+  width:min(490px,calc(100vw - 28px));
+  margin:auto;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--sand);
+  overflow:visible;
 }
-dialog[open]{opacity:1;transform:none;}
-@starting-style{dialog[open]{opacity:0;transform:translateY(22px) scale(.97);}}
-
 dialog::backdrop{
-  background:rgba(3,22,27,0);
-  backdrop-filter:blur(0px);
-  transition:background .5s var(--ease), backdrop-filter .5s var(--ease), overlay .5s allow-discrete, display .5s allow-discrete;
+  background:rgba(3,17,21,.72);
+  -webkit-backdrop-filter:blur(7px);
+  backdrop-filter:blur(7px);
 }
-dialog[open]::backdrop{background:rgba(3,22,27,.76);backdrop-filter:blur(7px);}
-@starting-style{dialog[open]::backdrop{background:rgba(3,22,27,0);backdrop-filter:blur(0px);}}
+dialog[open]{animation:lift .32s var(--ease);}
+@keyframes lift{from{opacity:0;transform:translateY(14px) scale(.985);}to{opacity:1;transform:none;}}
 
-.modal-inner{padding:clamp(30px,6vw,40px) clamp(22px,6vw,38px) clamp(26px,5vw,32px);text-align:center;}
-dialog[open] .modal-inner > *{animation:liftIn .7s var(--ease) both;}
-dialog[open] .modal-inner > :nth-child(1){animation-delay:.08s;}
-dialog[open] .modal-inner > :nth-child(2){animation-delay:.16s;}
-dialog[open] .modal-inner > :nth-child(3){animation-delay:.23s;}
-dialog[open] .modal-inner > :nth-child(4){animation-delay:.30s;}
-dialog[open] .modal-inner > :nth-child(5){animation-delay:.37s;}
-dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
-
-.modal-crest{
+.modal-inner{
   position:relative;
-  width:70px;height:70px;margin:0 auto;
+  padding:clamp(28px,5vw,40px);
+  border-radius:var(--r-lg);
+  background:linear-gradient(172deg,var(--shelf),var(--abyss) 66%);
+  box-shadow:0 50px 100px -34px rgba(0,0,0,.9);
+  text-align:center;
+  max-height:calc(100svh - 36px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#2C6474 transparent;
+}
+.modal-inner::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
+  background:linear-gradient(90deg,transparent,var(--gold-lit) 25%,var(--lagoon-lit) 75%,transparent);
+}
+.modal-inner::-webkit-scrollbar{width:9px;}
+.modal-inner::-webkit-scrollbar-thumb{
+  background:#2C6474;border-radius:99px;
+  border:2px solid transparent;background-clip:padding-box;
+}
+
+/* modern close: a quiet round target in the corner */
+.modal-close{
+  position:absolute;
+  top:14px;right:14px;
+  width:38px;height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--deep-line);
   border-radius:50%;
-  display:grid;place-items:center;
-  background:var(--ink);
+  background:rgba(4,22,27,.6);
+  color:var(--sand-2);
+  cursor:pointer;
+  transition:color .25s var(--ease),border-color .25s var(--ease),background .25s var(--ease),transform .25s var(--ease);
 }
-.modal-crest::after{
-  content:"";position:absolute;inset:-8px;border-radius:50%;
-  border:1.5px solid color-mix(in oklab, var(--gold) 55%, transparent);
-  animation:ring 3.4s var(--ease-io) infinite;
+.modal-close:hover{
+  color:var(--sand);
+  border-color:var(--gold-lit);
+  background:rgba(20,65,80,.7);
+  transform:rotate(90deg);
 }
-@keyframes ring{0%{transform:scale(.94);opacity:.85;}70%{transform:scale(1.22);opacity:0;}100%{opacity:0;}}
-.modal-crest svg{width:42px;height:42px;}
+.modal-close svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;}
 
-.modal-inner h2{
-  margin:20px 0 10px;
-  font-family:var(--display);
-  font-size:clamp(28px,6vw,34px);
-  line-height:1.12;
-  letter-spacing:-.015em;
-  color:var(--ink);
+.modal-crest{display:flex;justify-content:center;margin-bottom:18px;}
+.modal-crest svg{width:44px;height:44px;}
+#thanksTitle{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(26px,5.5vw,34px);
+  line-height:1.2;
 }
-.modal-lede{color:var(--text-2);font-size:15.5px;}
-
+.modal-lede{margin-top:10px;font-size:15.5px;color:var(--sand-2);}
 .copied{
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  margin:22px 0 8px;padding:13px 15px;
-  font-size:14px;font-weight:600;
-  color:var(--lagoon);
-  background:color-mix(in oklab, var(--shallow) 16%, var(--paper));
-  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:20px;
+  padding:9px 16px;
+  border:1px solid rgba(72,214,200,.4);
+  border-radius:99px;
+  background:rgba(72,214,200,.09);
+  font-size:13.5px;
+  color:var(--lagoon-lit);
 }
-.copied svg{width:17px;height:17px;flex:none;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
-
+.copied svg{
+  width:16px;height:16px;flex:none;
+  stroke:currentColor;fill:none;stroke-width:2.4;
+  stroke-linecap:round;stroke-linejoin:round;
+}
 .modal-sep{
-  display:flex;align-items:center;gap:12px;
-  margin:22px 0 16px;
-  font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--text-3);
+  margin-top:26px;
+  padding-top:22px;
+  border-top:1px solid var(--deep-line);
+  font-size:11px;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--sand-3);
 }
-.modal-sep::before,.modal-sep::after{content:"";flex:1;height:1px;background:var(--line);}
-
-.modal-actions{display:grid;gap:10px;}
+.modal-actions{display:grid;gap:10px;margin-top:16px;}
 
 /* ============================================================
-   SCROLL-DRIVEN REVEALS (CSS where supported, IO where not)
+   Breakpoints. Phone first, then tablet, laptop, desktop.
    ============================================================ */
-@supports (animation-timeline:view()){
-  .reveal{
-    animation:revealIn linear both;
-    animation-timeline:view();
-    animation-range:entry 4% cover 22%;
+
+/* phones and small tablets: the crop pulls to the calm side of the
+   photograph, and the halo works harder, because there is no room to
+   put the title anywhere but straight over the picture */
+@media (max-width:767px){
+  :root{--focus:22% 42%;}
+  .hero-copy > *{
+    text-shadow:0 1px 30px rgba(255,255,255,.95),0 1px 10px rgba(255,255,255,.85),0 1px 3px rgba(255,255,255,.8);
   }
 }
-@supports not (animation-timeline:view()){
-  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
-  .js .reveal.is-in{opacity:1;transform:none;}
-}
-@keyframes revealIn{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
 
-/* ============================================================
-   SMALL SCREENS + REDUCED MOTION
-   ============================================================ */
-@media (max-width:640px){
-  .hero{min-height:clamp(460px,78svh,640px);}
-  .hero-photo{object-position:center 48%;}
-  .rating{gap:0;padding:18px 0 20px;}
+/* small phones: the hotel name matters more than the location line */
+@media (max-width:539px){
+  .masthead-where{display:none;}
+  .mark-name{font-size:18px;}
+  .card-head{flex-direction:column;align-items:flex-start;gap:5px;}
+}
+
+/* larger phones and small tablets */
+@media (min-width:560px){
+  .grp.duo{grid-template-columns:1fr 1fr;}
+}
+
+/* tablets */
+@media (min-width:768px){
+  body{font-size:16.5px;}
+  .panel{max-width:700px;}
+  .modal-actions{grid-template-columns:1fr 1fr;}
+  .modal-actions .btn:first-child{grid-column:1 / -1;}
+  .foot-inner{grid-template-columns:1.6fr 1fr 1fr;}
+}
+
+/* laptops and desktops: two columns, rail stays in view */
+@media (min-width:1024px){
+  .panel{
+    max-width:1240px;
+    grid-template-columns:minmax(280px,0.8fr) minmax(0,1.2fr);
+  }
+  .rail{position:sticky;top:98px;}
+}
+
+/* wide desktops */
+@media (min-width:1500px){
+  .panel{gap:60px;}
+}
+
+/* short landscape phones */
+@media (max-height:520px) and (orientation:landscape){
+  .hero{padding-top:44px;padding-bottom:26px;}
+}
+
+/* coarse pointers get bigger tap targets */
+@media (pointer:coarse){
+  .prompt{padding:10px 17px;font-size:14px;}
+  .rating label{padding:12px 0;}
+  .modal-close{width:42px;height:42px;}
 }
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{
-    animation-duration:.01ms !important;
+    animation-duration:.001ms !important;
     animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
   }
-  .hero-photo,.hero-drawn{animation:none;transform:none;}
-  .reveal,.js .reveal{animation:none !important;opacity:1 !important;transform:none !important;}
+  .reveal{opacity:1;transform:none;}
+}
+
+@media print{
+  .progress,.masthead,.page-bg,.modal-close{display:none;}
+  body{background:#fff;color:#000;}
+  .rail,.page-foot{background:#fff;backdrop-filter:none;}
+  .form-side{background:#fff;color:#000;box-shadow:none;border:1px solid #999;}
 }
 </style>
 </head>
+
 <body>
 
-<a class="skip" href="#share">Skip to the form</a>
-<div id="top-sentinel" aria-hidden="true" style="position:absolute;top:0;height:1px;width:1px;"></div>
+<!-- Optional. Put img/bay.jpg and img/bay-mobile.jpg in place and the
+     photograph sits behind the whole page. With no files here this layer
+     removes itself and the page reads as clean paper. -->
+<div class="page-bg" id="pageBg" aria-hidden="true">
+  <picture>
+    <source media="(max-width:640px)" srcset="img/bay-mobile.jpg">
+    <img class="hero-photo" id="heroPhoto" src="img/bay.jpg" alt=""
+         width="1920" height="1080" fetchpriority="high" decoding="async">
+  </picture>
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none">
+    <source src="img/bay.mp4" type="video/mp4">
+  </video>
+  <div class="page-veil"></div>
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<span id="top-sentinel" aria-hidden="true"></span>
 
 <header class="masthead" id="masthead">
   <a class="mark" href="#top">
     <svg viewBox="0 0 64 64" aria-hidden="true">
-      <circle cx="32" cy="32" r="30" fill="#04212A" stroke="#E3A62F" stroke-width="2"/>
-      <path d="M20 39a12 12 0 0 1 24 0z" fill="#E3A62F"/>
-      <path d="M15 39h34M22 46h20" stroke="#3FBFBF" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <text x="32" y="28" font-family="Instrument Serif, Georgia, serif" font-size="18" fill="#FCF8F2" text-anchor="middle">UK</text>
+      <circle cx="32" cy="32" r="30" fill="#052027"/>
+      <path d="M20 38a12 12 0 0 1 24 0z" fill="#E9B45B"/>
+      <path d="M15 39h34M22 46h20" stroke="#48D6C8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <text x="32" y="27" font-family="Instrument Serif, Georgia, serif" font-size="17" fill="#F4E7D0" text-anchor="middle">UK</text>
     </svg>
-    <span>
-      <span class="mark-name">Hotel UK</span>
-      <span class="mark-sub">Passikudah</span>
-    </span>
+    <span class="mark-name">Hotel UK Passikudah</span>
   </a>
-  <span class="masthead-where">Pasikuda Bay · Sri Lanka</span>
+  <span class="masthead-where">Pasikuda Bay, Sri Lanka</span>
 </header>
 
 <header class="hero" id="top">
-  <div class="hero-media" aria-hidden="true">
-
-    <!-- Floor of the stack: the bay drawn in CSS + SVG, so the page is
-         never blank while the photograph loads, or if it never does. -->
-    <div class="hero-drawn"></div>
-
-    <!-- The photograph. This is the only place to change it. Phones get
-         the smaller file; the blurred page backdrop follows automatically. -->
-    <picture>
-      <source media="(max-width:640px)" srcset="img/bay-mobile.jpg">
-      <img class="hero-photo" id="heroPhoto" src="img/bay.jpg" alt=""
-           width="1920" height="1200" fetchpriority="high" decoding="async">
-    </picture>
-
-    <!-- Optional: drop a silent 8–15s loop at img/bay.mp4 and it plays
-         by itself. If the file is absent this element removes itself. -->
-    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none">
-      <source src="img/bay.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-shade"></div>
-  </div>
-
   <div class="hero-copy">
     <p class="hero-eyebrow">Share your stay</p>
     <h1>How was the <em>bay</em> this time?</h1>
-    <p class="hero-lede">A few honest lines from you help the next traveller find the quiet end of Pasikuda and tell us what to keep doing.</p>
+    <p class="hero-lede">A few honest lines from you help the next traveller find the quiet end of Pasikuda, and they tell us what to keep doing.</p>
   </div>
-
-  <a class="scroll-cue" href="#share">
-    <span>Write a few lines</span>
-    <i></i>
-  </a>
 </header>
 
 <main class="wrap" id="share" tabindex="-1">
@@ -929,9 +1026,10 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     <aside class="rail reveal">
       <div class="crest" aria-hidden="true">
         <svg viewBox="0 0 64 64">
-          <path d="M20 39a12 12 0 0 1 24 0z" fill="#E3A62F"/>
-          <path d="M15 39h34M22 46h20" stroke="#3FBFBF" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <text x="32" y="28" font-family="Instrument Serif, Georgia, serif" font-size="18" fill="#FCF8F2" text-anchor="middle">UK</text>
+          <circle cx="32" cy="32" r="30" fill="#052027"/>
+          <path d="M20 38a12 12 0 0 1 24 0z" fill="#E9B45B"/>
+          <path d="M15 39h34M22 46h20" stroke="#48D6C8" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <text x="32" y="27" font-family="Instrument Serif, Georgia, serif" font-size="17" fill="#F4E7D0" text-anchor="middle">UK</text>
         </svg>
       </div>
 
@@ -941,7 +1039,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
       <ul class="assurances">
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <span><b>About a minute</b>Four short questions, that is all.</span>
+          <span><b>About a minute</b>Three short questions, that is all.</span>
         </li>
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6z"/><path d="M9.2 12.2l2 2 3.6-3.8"/></svg>
@@ -949,17 +1047,22 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
         </li>
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/><path d="M14 6l6 6-6 6"/></svg>
-          <span><b>You choose where it goes</b>Our pages first. Google and Trip.com only if you want to.</span>
+          <span><b>You choose where it goes</b>Tick the box for our pages. Leave it clear and it is yours to post on Google.</span>
         </li>
       </ul>
 
-      <p class="rail-foot">Pasikuda Beach · Kalkudah · Eastern Province</p>
+      <p class="rail-foot">Pasikuda Beach, Kalkudah, Eastern Province</p>
     </aside>
 
     <section class="form-side reveal">
+
+      <div class="card-head">
+        <h2 class="card-title">Write your review</h2>
+        <span class="card-step" id="tideLabel">Just started</span>
+      </div>
+
       <div class="tide" aria-hidden="true">
         <div class="tide-track"><div class="tide-fill" id="tideFill"></div></div>
-        <span class="tide-label" id="tideLabel">Just started</span>
       </div>
 
       <p class="error" id="formError" role="alert"></p>
@@ -969,7 +1072,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
         <div class="grp duo">
           <div>
             <label class="lab" for="customerName">Your name</label>
-            <input type="text" id="customerName" name="customerName" maxlength="60" autocomplete="name" placeholder="Esme">
+            <input type="text" id="customerName" name="customerName" maxlength="60" autocomplete="name" placeholder="Amara Silva">
           </div>
           <div>
             <label class="lab" for="country">Travelling from <span class="opt">(optional)</span></label>
@@ -990,7 +1093,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 
           <div class="aside-note">
             <div>
-              <p>Thank you for being straight with us. We are not putting this on our public pages it goes straight to the manager here, so somebody can put it right. You can still post it publicly yourself; the links come up either way.</p>
+              <p>Thank you for being straight with us. We are not putting this on our public pages. It goes to the manager here so somebody can put it right. You can still post it publicly yourself, and the links come up either way.</p>
             </div>
           </div>
         </fieldset>
@@ -1010,9 +1113,18 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
           </div>
         </div>
 
-        <div class="grp consent">
-          <input type="checkbox" id="consent">
-          <label for="consent">Post my name and review on the Hotel UK Passikudah Facebook and Instagram pages.</label>
+        <div class="routing">
+          <label class="consent" for="consent">
+            <input type="checkbox" id="consent">
+            <span class="consent-text">
+              Post my name and review on the Hotel UK Passikudah Facebook and Instagram pages.
+              <small>Leave this clear and we post nothing. Your words go to your clipboard and the Google review box opens for you.</small>
+            </span>
+          </label>
+          <p class="routing-out to-google" id="routingOut">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            <span id="routingText">Goes to Google only</span>
+          </p>
         </div>
 
         <div class="honeypot" aria-hidden="true">
@@ -1035,30 +1147,65 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 </main>
 
 <footer class="page-foot">
-  <p class="foot-name">Hotel UK Passikudah</p>
-  <p class="foot-where">Pasikuda Beach, Kalkudah, Sri Lanka</p>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" fill="#0C3038"/>
+          <path d="M20 38a12 12 0 0 1 24 0z" fill="#E9B45B"/>
+          <path d="M15 39h34M22 46h20" stroke="#48D6C8" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <text x="32" y="27" font-family="Instrument Serif, Georgia, serif" font-size="17" fill="#F4E7D0" text-anchor="middle">UK</text>
+        </svg>
+        <span class="foot-name">Hotel UK Passikudah</span>
+      </div>
+      <p class="foot-where">
+        Pasikuda Beach, Kalkudah<br>
+        Eastern Province, Sri Lanka
+      </p>
+      <p class="photo-credit" hidden>Photograph by <a href="#">Name</a></p>
+    </div>
 
-  <!-- Some free photo licences ask for a credit. Put the wording here and
-       remove the hidden attribute. -->
-  <p class="photo-credit" hidden>Photograph by <a href="#">Name</a></p>
+    <div>
+      <p class="foot-head">Find us</p>
+      <ul class="foot-links">
+        <li><a id="footGoogle" href="#" target="_blank" rel="noopener">Google</a></li>
+        <li><a id="footBooking" href="#" target="_blank" rel="noopener">Booking.com</a></li>
+      </ul>
+    </div>
 
-  <a class="credit" href="https://www.thushannmassthamizhan.media/" target="_blank" rel="noopener">
-    <span class="credit-label">Web page created by</span>
-    <span class="credit-name">Vasanthakumar Thushann</span>
-    <span class="credit-site">
-      thushannmassthamizhan.media
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-    </span>
-  </a>
+    <div>
+      <p class="foot-head">This page</p>
+      <ul class="foot-links">
+        <li><a href="#share">Write a review</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-bar">
+    <p class="copyright">
+      &copy; <span id="year">2026</span> Hotel UK Passikudah. All rights reserved.
+    </p>
+
+    <a class="credit" href="https://www.thushannmassthamizhan.media/" target="_blank" rel="noopener">
+      <span class="credit-label">Built by</span>
+      <span class="credit-name">Vasanthakumar Thushann</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
 </footer>
 
 <dialog id="thanksModal" aria-labelledby="thanksTitle">
   <div class="modal-inner">
+    <button type="button" class="modal-close" id="closeBtn" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
     <div class="modal-crest" aria-hidden="true">
       <svg viewBox="0 0 64 64">
-        <path d="M20 39a12 12 0 0 1 24 0z" fill="#E3A62F"/>
-        <path d="M15 39h34M22 46h20" stroke="#3FBFBF" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <text x="32" y="28" font-family="Instrument Serif, Georgia, serif" font-size="18" fill="#FCF8F2" text-anchor="middle">UK</text>
+        <path d="M20 39a12 12 0 0 1 24 0z" fill="#E9B45B"/>
+        <path d="M15 39h34M22 46h20" stroke="#48D6C8" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <text x="32" y="28" font-family="Instrument Serif, Georgia, serif" font-size="18" fill="#F4E7D0" text-anchor="middle">UK</text>
       </svg>
     </div>
 
@@ -1067,17 +1214,18 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 
     <div class="copied" id="copiedNote">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-      <span id="copiedText">Copied — ready to paste</span>
+      <span id="copiedText">Copied and ready to paste</span>
     </div>
 
     <p class="modal-sep" id="modalSep">Post it elsewhere too</p>
 
     <div class="modal-actions">
-      <a class="btn btn-gold" id="googleBtn" href="#" target="_blank" rel="noopener"><span>Paste on Google</span></a>
-      <a class="btn btn-gold" id="tripBtn" href="#" target="_blank" rel="noopener"><span>Paste on Trip.com</span></a>
+      <a class="btn" id="googleBtn" href="#" target="_blank" rel="noopener"><span>Paste on Google</span></a>
+      <a class="btn btn-quiet" id="bookingBtn" href="#" target="_blank" rel="noopener"><span>Our Booking.com page</span></a>
       <button type="button" class="btn btn-quiet" id="copyAgainBtn"><span>Copy my review again</span></button>
-      <button type="button" class="btn btn-quiet" id="closeBtn"><span>Close</span></button>
     </div>
+
+    <p class="fineprint">Booked through Booking.com? They send their own review invitation by email after your stay. That is the only way a review can be left there.</p>
   </div>
 </dialog>
 
@@ -1098,51 +1246,72 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 
 <script>
 /* ------------------------------------------------------------------
-   Hero media: drop the video if there is no clip, drop the photograph
-   if it will not load, and hand the winning image to the page backdrop.
+   Copyright year, so it never goes stale.
+   ------------------------------------------------------------------ */
+document.getElementById("year").textContent = String(new Date().getFullYear());
+
+/* ------------------------------------------------------------------
+   Reading progress along the top of the page.
    ------------------------------------------------------------------ */
 (function () {
   "use strict";
+  var bar = document.getElementById("progress");
+  if (!bar) { return; }
+  var ticking = false;
 
+  function paint() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    var pct = max > 0 ? Math.min(1, doc.scrollTop / max) : 0;
+    bar.style.transform = "scaleX(" + pct + ")";
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+  }, { passive: true });
+  window.addEventListener("resize", paint, { passive: true });
+  paint();
+})();
+
+/* ------------------------------------------------------------------
+   Hero band. Both the clip and the photograph are optional. If neither
+   loads the band removes itself and the page opens on type alone.
+   ------------------------------------------------------------------ */
+(function () {
+  "use strict";
+  var media = document.getElementById("pageBg");
+  var photo = document.getElementById("heroPhoto");
   var video = document.getElementById("heroVideo");
+
   if (video) {
-    var drop = function () {
-      if (video && video.parentNode) { video.parentNode.removeChild(video); video = null; }
-    };
     var source = video.querySelector("source");
-    if (source) { source.addEventListener("error", drop); }
-    video.addEventListener("error", drop);
-    video.addEventListener("loadeddata", function () { if (!video.videoWidth) { drop(); } });
-    setTimeout(function () { if (video && video.readyState === 0) { drop(); } }, 4000);
+    var dropVideo = function () {
+      if (video && video.parentNode) { video.parentNode.removeChild(video); }
+      video = null;
+    };
+    if (source) { source.addEventListener("error", dropVideo); }
+    video.addEventListener("error", dropVideo);
+    video.addEventListener("loadeddata", function () { if (!video.videoWidth) { dropVideo(); } });
+    setTimeout(function () { if (video && video.readyState === 0) { dropVideo(); } }, 4000);
     video.load();
   }
 
-  var photo = document.getElementById("heroPhoto");
   if (!photo) { return; }
-
-  var useAsBackdrop = function () {
-    var src = photo.currentSrc || photo.src;
-    if (src) {
-      document.documentElement.style.setProperty("--photo", 'url("' + src + '")');
-    }
-  };
-
-  if (photo.complete && photo.naturalWidth) { useAsBackdrop(); }
-  photo.addEventListener("load", useAsBackdrop);
   photo.addEventListener("error", function () {
-    // No picture: fall back to the drawn bay underneath.
     var pic = photo.parentNode;
     if (pic && pic.parentNode) { pic.parentNode.removeChild(pic); }
-    console.warn(
-      "The hero photograph could not be loaded: " + (photo.getAttribute("src") || "") +
-      "\nCheck that img/bay.jpg and img/bay-mobile.jpg exist. A link ending in .htm " +
-      "is a web page, not a picture — download the file and put it in img/."
-    );
+    // Nothing left behind the page? Take the whole layer out, veil included,
+    // so the page is plain paper rather than a grey wash over nothing.
+    setTimeout(function () {
+      if (media && !media.querySelector("picture, video")) { media.remove(); }
+    }, 4200);
+    console.info("No hero photograph. Put img/bay.jpg and img/bay-mobile.jpg in place to show one.");
   });
 })();
 
 /* ------------------------------------------------------------------
-   Masthead goes solid once the page has scrolled off the top.
+   Masthead picks up a rule once the page has scrolled off the top.
    ------------------------------------------------------------------ */
 (function () {
   "use strict";
@@ -1156,12 +1325,16 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 })();
 
 /* ------------------------------------------------------------------
-   Scroll reveals for browsers without CSS scroll-driven animations.
+   Scroll reveals. If the browser cannot observe, everything is shown.
    ------------------------------------------------------------------ */
 (function () {
   "use strict";
-  var supported = window.CSS && CSS.supports && CSS.supports("animation-timeline: view()");
-  if (supported || !("IntersectionObserver" in window)) { return; }
+  var items = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("is-in"); });
+    return;
+  }
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -1170,9 +1343,14 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: "0px 0px -5% 0px" });
 
-  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  items.forEach(function (el) { io.observe(el); });
+
+  // Safety net, so a guest never meets a blank card.
+  setTimeout(function () {
+    items.forEach(function (el) { el.classList.add("is-in"); });
+  }, 2000);
 })();
 
 /* ------------------------------------------------------------------
@@ -1182,22 +1360,26 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
   "use strict";
 
   /* =================================================================
-     CONFIGURATION — these three lines, and nothing else.
+     CONFIGURATION. These lines, and nothing else.
      ================================================================= */
   var CONFIG = {
     // Same origin when the .NET app serves this page. Hosting it elsewhere?
     // Put the full address, e.g. "https://your-app.herokuapp.com/api/reviews"
     apiUrl: "/api/reviews",
 
-    // Google: your Place ID goes on the end.
-    googleReviewUrl: "https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID",
+    // Google: the Place ID on the end opens the review box for
+    // Hotel UK Passikudah directly.
+    googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJWWbUJwDZ-joRPETg9xd0TFo",
 
-    // Trip.com: open your hotel page there and copy the address here.
-    tripComUrl: "https://www.trip.com/hotels/YOUR-HOTEL-PAGE",
+    // Booking.com: this is the hotel listing page, NOT a review form.
+    // Booking.com only accepts reviews from guests who booked through them,
+    // through a private link they email after checkout. There is no public
+    // review address to send anyone to, so this button is a plain link.
+    bookingUrl: "https://www.booking.com/hotel/lk/uk-pasikuda.html",
 
     // Keep this the same number as Meta:MinimumRatingToPublish on the server.
-    // Anything below it is not posted to Facebook or Instagram - it goes to the
-    // manager privately - and the wording on this page changes to say so.
+    // Anything below it is not posted to Facebook or Instagram. It goes to
+    // the manager privately, and the wording on this page changes to say so.
     publishThreshold: 4
   };
 
@@ -1206,7 +1388,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     2: "Below what we aim for. We want the detail.",
     3: "Good, with room to be better.",
     4: "Really glad the bay treated you well.",
-    5: "Wonderful \u2014 thank you."
+    5: "Wonderful. Thank you."
   };
 
   var form = document.getElementById("reviewForm");
@@ -1224,8 +1406,11 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
   var submitLabel = document.getElementById("submitLabel");
   var tideFill = document.getElementById("tideFill");
   var tideLabel = document.getElementById("tideLabel");
+  var routingOut = document.getElementById("routingOut");
+  var routingText = document.getElementById("routingText");
 
   var modal = document.getElementById("thanksModal");
+  var modalInner = modal.querySelector(".modal-inner");
   var thanksName = document.getElementById("thanksName");
   var thanksLede = document.getElementById("thanksLede");
   var modalSep = document.getElementById("modalSep");
@@ -1235,7 +1420,9 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
   var closeBtn = document.getElementById("closeBtn");
 
   document.getElementById("googleBtn").href = CONFIG.googleReviewUrl;
-  document.getElementById("tripBtn").href = CONFIG.tripComUrl;
+  document.getElementById("bookingBtn").href = CONFIG.bookingUrl;
+  document.getElementById("footGoogle").href = CONFIG.googleReviewUrl;
+  document.getElementById("footBooking").href = CONFIG.bookingUrl;
 
   var firstTouch = 0;
   var sending = false;
@@ -1271,26 +1458,58 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     }
   }
 
+  /* ---------- where this review is going ----------
+     Ticked      goes to Facebook and Instagram, and Google is offered after.
+     Not ticked  we post nothing. It is the guest's to put on Google.
+     Low rating  never public either way. It goes to the manager.
+  ------------------------------------------------- */
+  function postsToSocial() {
+    var rating = selectedRating();
+    return consentInput.checked && rating >= CONFIG.publishThreshold;
+  }
+
+  function paintRouting() {
+    var rating = selectedRating();
+
+    if (rating > 0 && rating < CONFIG.publishThreshold) {
+      routingText.textContent = "Goes to the manager here, not to any public page";
+      routingOut.className = "routing-out";
+      return;
+    }
+    if (consentInput.checked) {
+      routingText.textContent = "Goes to our Facebook and Instagram, then Google if you want";
+      routingOut.className = "routing-out to-social";
+    } else {
+      routingText.textContent = "Goes to Google only. We post nothing.";
+      routingOut.className = "routing-out to-google";
+    }
+  }
+
   ratingGroup.addEventListener("change", function () {
     var value = selectedRating();
     paintStars(value, true);
     form.classList.toggle("is-private", value > 0 && value < CONFIG.publishThreshold);
+    paintRouting();
     updateTide();
   });
 
-  /* ---------- how full the form is ---------- */
+  consentInput.addEventListener("change", paintRouting);
+
+  /* ---------- how far through the guest is ----------
+     Three steps. The consent box is a choice, not a step, so it is
+     deliberately not counted here.
+  --------------------------------------------------- */
   function updateTide() {
     var done = 0;
     if (nameInput.value.trim().length >= 2) { done++; }
     if (selectedRating() > 0) { done++; }
     if (textInput.value.trim().length >= 40) { done++; }
-    if (consentInput.checked) { done++; }
 
-    var pct = Math.round((done / 4) * 100);
+    var pct = Math.round((done / 3) * 100);
     tideFill.style.setProperty("--tide", pct + "%");
     tideLabel.textContent = done === 0 ? "Just started"
-      : done === 4 ? "Ready to send"
-      : done + " of 4 done";
+      : done === 3 ? "Ready to send"
+      : done + " of 3 done";
   }
 
   ["input", "change"].forEach(function (evt) {
@@ -1312,7 +1531,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     var chip = event.target.closest(".prompt");
     if (!chip) { return; }
 
-    var lead = chip.getAttribute("data-prompt") + " \u2014 ";
+    var lead = chip.getAttribute("data-prompt") + " ";
     var current = textInput.value;
     var joiner = current.length === 0 ? "" : (/\n\s*$/.test(current) ? "" : "\n");
 
@@ -1353,8 +1572,8 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 
   function showCopyState(copied) {
     copiedText.textContent = copied
-      ? "Copied \u2014 ready to paste"
-      : "Copy did not work. Tap \u201cCopy my review again\u201d.";
+      ? "Copied and ready to paste"
+      : "Copy did not work. Tap Copy my review again.";
     copiedNote.style.opacity = copied ? "1" : ".8";
   }
 
@@ -1368,9 +1587,6 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     }
     if (textInput.value.trim().length < 10) {
       return { field: textInput, message: "Write at least a few words about your stay." };
-    }
-    if (!consentInput.checked) {
-      return { field: consentInput, message: "Tick the box so we know we may post your review." };
     }
     return null;
   }
@@ -1421,6 +1637,9 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     if (honeypot.value || tooFast) { return; }
 
     var rating = selectedRating();
+    var isLow = rating < CONFIG.publishThreshold;
+    var toSocial = consentInput.checked && !isLow;
+
     var payload = {
       customerName: nameInput.value.trim(),
       country: countryInput.value.trim() || null,
@@ -1429,16 +1648,19 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
       website: honeypot.value
     };
 
-    // Copy first, while the click still counts as a user gesture in Safari.
     copyToClipboard(payload.reviewText).then(showCopyState);
 
     sending = true;
     submitBtn.setAttribute("aria-busy", "true");
     submitLabel.textContent = "Sending\u2026";
 
-    send(payload, 1);
+    // The server is only told about a review it is meant to act on: one the
+    // guest agreed to publish, or a low one the manager needs to see. A high
+    // rating with the box left clear stays entirely with the guest.
+    if (toSocial || isLow) {
+      send(payload, 1);
+    }
 
-    // The guest should not wait on Meta. Thank them now.
     setTimeout(function () {
       sending = false;
       submitBtn.removeAttribute("aria-busy");
@@ -1446,18 +1668,21 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
 
       thanksName.textContent = payload.customerName.split(" ")[0];
 
-      if (rating < CONFIG.publishThreshold) {
+      if (isLow) {
         document.getElementById("thanksTitle").firstChild.nodeValue = "Thank you for telling us, ";
         thanksLede.textContent = "This one goes to the manager here, not to our public pages.";
         modalSep.textContent = "If you want to post it publicly";
-      } else {
+      } else if (toSocial) {
         document.getElementById("thanksTitle").firstChild.nodeValue = "Thank you, ";
         thanksLede.textContent = "Your words are on their way to our Facebook and Instagram pages.";
         modalSep.textContent = "Post it elsewhere too";
+      } else {
+        document.getElementById("thanksTitle").firstChild.nodeValue = "Thank you, ";
+        thanksLede.textContent = "We have posted nothing, just as you asked. Your words are on your clipboard, ready for Google.";
+        modalSep.textContent = "One tap to post it";
       }
 
-      if (typeof modal.showModal === "function") { modal.showModal(); }
-      else { modal.setAttribute("open", ""); }
+      openModal();
 
       form.reset();
       form.classList.remove("is-private");
@@ -1468,6 +1693,7 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
         chip.removeAttribute("data-used");
       });
       firstTouch = 0;
+      paintRouting();
       updateTide();
 
       copyAgainBtn.onclick = function () {
@@ -1476,12 +1702,29 @@ dialog[open] .modal-inner > :nth-child(6){animation-delay:.44s;}
     }, 600);
   });
 
-  closeBtn.addEventListener("click", function () {
+  /* ---------- dialog ---------- */
+  function openModal() {
+    if (typeof modal.showModal === "function") { modal.showModal(); }
+    else { modal.setAttribute("open", ""); }
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
     if (typeof modal.close === "function") { modal.close(); }
     else { modal.removeAttribute("open"); }
+    document.body.style.overflow = "";
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("close", function () { document.body.style.overflow = ""; });
+
+  // Clicking the dark area outside the card closes it, the way a sheet does.
+  modal.addEventListener("click", function (event) {
+    if (!modalInner.contains(event.target)) { closeModal(); }
   });
 
   paintStars(0, false);
+  paintRouting();
   updateTide();
 })();
 </script>
